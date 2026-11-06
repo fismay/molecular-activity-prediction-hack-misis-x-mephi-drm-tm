@@ -9,3 +9,15 @@ data/kaggle/
 data/raw/
 artifacts/
 submission.csv
+submission_blend.csv
+submission_rf_tuned.csv
+submission_mixture.csv
+submission_smiles_text.csv
+submission_smiles_syntax.csv
+submission_smiles_robust.csv
+submission_calibrated.csv
+catboost_info/
+
+submission_knn_blend.csv
+
+.venv-tabicl/
