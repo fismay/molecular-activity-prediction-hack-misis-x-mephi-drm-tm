@@ -1,0 +1,48 @@
+{
+  "inputs": [
+    "SMILES"
+  ],
+  "metric": "MSE on original SI scale",
+  "grouped_validation": {
+    "42": [
+      4085317.0214503845,
+      615600.6412157452,
+      5227205.092167638,
+      5362905.423823357,
+      2622733.620155908
+    ],
+    "2026": [
+      5120119.686819344,
+      2745342.379417913,
+      20191477.091823183,
+      1875181.242205898,
+      3990659.7153212796
+    ],
+    "17": [
+      24823318.240254283,
+      30007497.495362684,
+      2336803.3415041044,
+      3546127.1101054223,
+      3926210.0674129752
+    ]
+  },
+  "mean_mse": 7765099.877936007,
+  "classifier": "LogisticRegression(C=100, max_iter=3000)",
+  "text": {
+    "ngram_range": [
+      3,
+      7
+    ],
+    "lowercase": false,
+    "canonicalized": false
+  },
+  "conditional_regressor": "RandomForest(n_estimators=250, max_features=0.3, min_samples_leaf=1, random_state=42)",
+  "test_rows": 597,
+  "sklearn_version": "1.9.1",
+  "data_sha256": {
+    "train.csv": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+    "test.csv": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+    "sample_submit.csv": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c"
+  },
+  "limitation": "Original SMILES syntax can encode source-specific formatting; predictions may change under an equivalent SMILES serialization."
+}

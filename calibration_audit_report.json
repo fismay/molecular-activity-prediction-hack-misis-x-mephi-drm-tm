@@ -1,0 +1,32 @@
+{
+  "split": "GroupKFold(5,shuffle=True,random_state=137)",
+  "baseline_mse": 6939452.122062193,
+  "calibrated_mse": 6785565.984016609,
+  "folds": [
+    {
+      "rows": 65,
+      "baseline_mse": 22532998.055286225,
+      "calibrated_mse": 22500575.784970284
+    },
+    {
+      "rows": 66,
+      "baseline_mse": 3358610.7829605257,
+      "calibrated_mse": 3080436.4781929627
+    },
+    {
+      "rows": 64,
+      "baseline_mse": 2640417.325248925,
+      "calibrated_mse": 2379498.556422404
+    },
+    {
+      "rows": 63,
+      "baseline_mse": 3396753.1769641037,
+      "calibrated_mse": 3495733.1481825258
+    },
+    {
+      "rows": 62,
+      "baseline_mse": 2440795.7230037483,
+      "calibrated_mse": 2145415.892822216
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "records": 75,
+  "exact_unflagged": 52,
+  "definition": "Published CC50/EC50 selectivity; endpoint distinct from CC50/IC50",
+  "status": "candidate_context_review",
+  "relations": {
+    "=": 52,
+    ">": 19,
+    ">=": 2,
+    "<": 2
+  },
+  "source": "https://www.ebi.ac.uk/chembl/api/data",
+  "data_license": "CC BY-SA 3.0",
+  "data_license_url": "https://chembl.gitbook.io/chembl-interface-documentation/about",
+  "collected_date": "2026-11-07",
+  "train_structure_matches": 1,
+  "test_structure_matches": 3
+}

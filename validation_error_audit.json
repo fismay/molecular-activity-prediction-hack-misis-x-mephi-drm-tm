@@ -1,0 +1,26 @@
+{
+  "model": "uncalibrated text/syntax mixture",
+  "observation_note": "Rows can recur across grouped validation runs; counts are held-out observations, not unique molecules.",
+  "pooled_mse": 7045189.134723628,
+  "mean_fold_mse": 7025213.905535633,
+  "groups": {
+    "SI=10000": {
+      "heldout_observations": 248,
+      "squared_error_share": 0.19708184894122519,
+      "mse": 5436342.793098452
+    },
+    "SI>10000": {
+      "heldout_observations": 3,
+      "squared_error_share": 0.564088538241141,
+      "mse": 1286287079.2867002
+    },
+    "SI<10000": {
+      "heldout_observations": 720,
+      "squared_error_share": 0.23882961281763354,
+      "mse": 2269172.776761284
+    }
+  },
+  "diagnostic_oracle_probability_mse": 4298475.904665898,
+  "diagnostic_oracle_conditional_mse": 1345187.574489573,
+  "oracle_note": "Diagnostics only; true validation targets are never available at prediction time."
+}

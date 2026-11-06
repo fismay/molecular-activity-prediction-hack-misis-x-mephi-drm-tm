@@ -1,0 +1,28 @@
+{
+  "source": "https://www.ebi.ac.uk/chembl/api/data",
+  "document": "CHEMBL6092128",
+  "doi": "10.1039/d4md00181h",
+  "assays": {
+    "IC50": "CHEMBL6092367",
+    "CC50": "CHEMBL6092368",
+    "SI": "CHEMBL6092369"
+  },
+  "raw_counts": {
+    "IC50": 27,
+    "CC50": 27,
+    "SI": 25
+  },
+  "filtered_counts": {
+    "IC50": 22,
+    "CC50": 27,
+    "SI": 22
+  },
+  "duplicate_molecule_assay_keys": {
+    "IC50": 0,
+    "CC50": 0,
+    "SI": 0
+  },
+  "complete_rows": 21,
+  "consistent_rows": 21,
+  "mismatches": []
+}

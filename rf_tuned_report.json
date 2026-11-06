@@ -1,0 +1,30 @@
+{
+  "metric": "MSE on original SI scale",
+  "features": "Morgan radius 2 fingerprint and nine RDKit descriptors from SMILES",
+  "model": "RandomForestRegressor(n_estimators=250, min_samples_leaf=1, max_features=0.3, random_state=42)",
+  "grouped_validation": {
+    "42": [
+      11062334.908439146,
+      7981087.57758398,
+      9384918.918516695,
+      12357766.398103323,
+      7180850.612669381
+    ],
+    "2026": [
+      10252098.719198659,
+      7777343.569798252,
+      27374228.075958807,
+      10978277.883607995,
+      11174096.736920303
+    ],
+    "17": [
+      28850691.39694416,
+      33005832.58053008,
+      9537209.22895434,
+      8370760.725066972,
+      8433674.388679877
+    ]
+  },
+  "mean_mse": 13581411.448064797,
+  "test_rows": 597
+}

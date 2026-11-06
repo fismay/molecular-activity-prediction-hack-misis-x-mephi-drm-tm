@@ -1,0 +1,19 @@
+{
+  "status": "confirmed_public_score",
+  "submission": "submission_brier_neighbors.csv",
+  "public_mse": 4006684.58056,
+  "original_code_commit": "4037525",
+  "script": "vacv_brier_neighbors.py",
+  "syntax_ensemble": true,
+  "syntax_max_features": 0.7,
+  "conditional_transform": "raw",
+  "calibrate_probability": true,
+  "latest_rejected_candidate": {
+    "submission": "submission_conservative_blend.csv",
+    "public_mse": 4072147.65629
+  },
+  "next_experimental_candidate": null,
+  "probability_calibration": "Brier, nested GroupKFold3, penalty 0.001",
+  "conditional_neighbor_ensemble_weight": 0.5,
+  "verified_public_rank": 10
+}
