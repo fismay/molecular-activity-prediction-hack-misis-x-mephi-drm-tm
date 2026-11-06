@@ -1,0 +1,6 @@
+numpy>=2.1,<3
+pandas>=2.2,<3
+scipy>=1.15,<2
+scikit-learn>=1.6,<2
+rdkit>=2025.3,<2027
+joblib>=1.4,<2
