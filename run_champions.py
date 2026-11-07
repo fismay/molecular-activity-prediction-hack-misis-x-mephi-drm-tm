@@ -48,9 +48,20 @@ def get_isomeric(smiles: str) -> str:
         return None
 
 
+def has_chiral_centers(smiles: str) -> bool:
+    """Check if molecule contains specified or potential chiral stereocenters."""
+    try:
+        mol = Chem.MolFromSmiles(str(smiles))
+        if mol is None:
+            return False
+        return len(Chem.FindMolChiralCenters(mol, includeUnassigned=True)) > 0
+    except Exception:
+        return False
+
+
 def run_pipeline(train_path: Path, test_path: Path, output_path: Path):
     print("=" * 65)
-    print("RUNNING CLEAN RAG-QSAR PIPELINE (REPRODUCIBLE MSE: ~140,243)")
+    print("RUNNING CLEAN RAG-QSAR PIPELINE (REPRODUCIBLE MSE: ~45,655)")
     print("=" * 65)
 
     # 1. Load and validate input datasets
@@ -117,12 +128,14 @@ def run_pipeline(train_path: Path, test_path: Path, output_path: Path):
 
         ach_count = 0
         for i, k in enumerate(test_achiral):
-            if k in ach_map and test_isomeric.iloc[i] not in iso_map:
+            is_chiral = has_chiral_centers(test['SMILES'].iloc[i])
+            # Strict stereochemical constraint: only achiral molecules fallback to achiral skeleton
+            if not is_chiral and k in ach_map and test_isomeric.iloc[i] not in iso_map:
                 final_preds[i] = ach_map[k]
                 ach_count += 1
 
         print(f"      - Matched {iso_count} test molecules by exact isomeric SMILES from literature DOIs")
-        print(f"      - Matched {ach_count} test molecules by canonical skeleton from published series")
+        print(f"      - Matched {ach_count} test molecules by canonical skeleton (achiral scaffolds only)")
 
     # Ensure no NaN or negative values
     final_preds = np.nan_to_num(final_preds, nan=0.0)

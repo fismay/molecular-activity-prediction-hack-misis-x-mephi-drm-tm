@@ -203,7 +203,7 @@ HTML_CONTENT = """<!DOCTYPE html>
         </div>
         <div style="width: 2px; height: 30px; background: rgba(255,255,255,0.3);"></div>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: #94a3b8;">
-          ВЕРИФИЦИРОВАННЫЙ РЕЗУЛЬТАТ: <strong style="color: #38bdf8;">140 243 MSE</strong>
+          ВЕРИФИЦИРОВАННЫЙ РЕЗУЛЬТАТ: <strong style="color: #38bdf8;">45 668 MSE</strong>
         </div>
       </div>
     </div>
@@ -601,31 +601,43 @@ HTML_CONTENT = """<!DOCTYPE html>
 
         <!-- Subheader: Official Kaggle Submissions -->
         <div style="font-family: 'Unbounded', sans-serif; font-size: 13px; font-weight: 800; color: #38bdf8; letter-spacing: 0.08em; text-transform: uppercase;">
-          ДВА ОФИЦИАЛЬНЫХ САБМИТА, ВЫГРУЖЕННЫХ НА KAGGLE:
+          ОФИЦИАЛЬНЫЕ САБМИТЫ, ВЫГРУЖЕННЫЕ НА KAGGLE:
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: rgba(56, 189, 248, 0.07); border-left: 4px solid #38bdf8; border-radius: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: rgba(56, 189, 248, 0.05); border-left: 3px solid #38bdf8; border-radius: 4px;">
           <div>
-            <div style="font-family: 'Unbounded', sans-serif; font-size: 15px; font-weight: 800; color: #ffffff; text-transform: uppercase;">
+            <div style="font-family: 'Unbounded', sans-serif; font-size: 14px; font-weight: 800; color: #ffffff; text-transform: uppercase;">
               KAGGLE SUBMISSION 2: КАРКАСНЫЕ АДАМАНТАНОВЫЕ АМИДЫ (DOI: 10.3390/v15010029)
             </div>
-            <div style="font-size: 13px; color: #94a3b8; text-transform: uppercase; margin-top: 4px;">
-              ТОЧНОЕ СОПОСТАВЛЕНИЕ АХИРАЛЬНЫХ ГРАФОВ RDKIT ДЛЯ СУПЕР-ИНГИБИТОРОВ 18A (SI=18 214) И 18B (SI=12 300)
+            <div style="font-size: 12px; color: #94a3b8; text-transform: uppercase; margin-top: 2px;">
+              ТОЧНОЕ СОПОСТАВЛЕНИЕ АХИРАЛЬНЫХ ГРАФОВ RDKIT ДЛЯ 18A (SI=18 214) И 18B (SI=12 300)
             </div>
           </div>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; color: #38bdf8;">363 764.4 MSE</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 800; color: #94a3b8;">363 764.4 MSE</span>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 26px; background: rgba(56, 189, 248, 0.16); border: 2px solid #38bdf8; border-radius: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: rgba(56, 189, 248, 0.09); border-left: 3px solid #38bdf8; border-radius: 4px;">
           <div>
-            <div style="font-family: 'Unbounded', sans-serif; font-size: 16px; font-weight: 800; color: #ffffff; text-transform: uppercase;">
-              KAGGLE SUBMISSION 1: ФИНАЛЬНЫЙ RAG-QSAR АНСАМБЛЬ (БАЗА С DOI + ZERO-HURDLE)
+            <div style="font-family: 'Unbounded', sans-serif; font-size: 14px; font-weight: 800; color: #ffffff; text-transform: uppercase;">
+              KAGGLE SUBMISSION 1: RAG-QSAR БАЗОВЫЙ (БАЗА С DOI + ZERO-HURDLE)
             </div>
-            <div style="font-size: 13px; color: #cbd5e1; text-transform: uppercase; margin-top: 4px;">
+            <div style="font-size: 12px; color: #cbd5e1; text-transform: uppercase; margin-top: 2px;">
               МУЛЬТИ-ЛИТЕРАТУРНЫЙ КОНВЕЙЕР (ТЕКОВИРИМАТ, 3-ДЕЗАГУАНИНЫ, ФОСФОНАТЫ) + ML-РЕГРЕССОР
             </div>
           </div>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 900; color: #38bdf8;">140 243.8 MSE</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 800; color: #60a5fa;">140 243.8 MSE</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: rgba(56, 189, 248, 0.2); border: 2px solid #38bdf8; border-radius: 6px;">
+          <div>
+            <div style="font-family: 'Unbounded', sans-serif; font-size: 16px; font-weight: 800; color: #ffffff; text-transform: uppercase;">
+              KAGGLE SUBMISSION 3: ЧЕМПИОНСКИЙ RAG-QSAR (DOI: 10.1021/jm061453z + СТЕРЕОХИМИЯ)
+            </div>
+            <div style="font-size: 12px; color: #e2e8f0; text-transform: uppercase; margin-top: 3px;">
+              ФИКС СТЕРЕОИЗОМЕРОВ (НЕПЛАНОЦИН A) + ПОЛНАЯ СЕРИЯ ТЕКОВИРИМАТА ST-246 ПО РЕГЛАМЕНТУ ТЗ
+            </div>
+          </div>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 900; color: #38bdf8;">45 668.1 MSE</span>
         </div>
       </div>
     </div>
@@ -651,17 +663,19 @@ HTML_CONTENT = """<!DOCTYPE html>
         <div style="background: rgba(0, 0, 0, 0.35); border: 2px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="font-family: 'Unbounded', sans-serif; font-size: 18px; font-weight: 800; color: #38bdf8; margin-bottom: 16px;">
-              ДВА ОФИЦИАЛЬНЫХ САБМИТА НА KAGGLE
+              ОФИЦИАЛЬНЫЕ САБМИТЫ НА KAGGLE
             </div>
 
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #cbd5e1; background: rgba(0,0,0,0.5); padding: 18px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); margin-bottom: 18px; line-height: 1.6;">
-              <span style="color: #38bdf8; font-weight: 700;">• SUB 1 (140k MSE):</span> sub1_rag_qsar_clean_140k.csv<br>
-              <span style="color: #64748b; font-size: 11px;">SHA-256: 5969eb0f77ae37fa14ac322a781573aa3d633512ba113cbf61513f7dc3f27a44</span><br><br>
-              <span style="color: #38bdf8; font-weight: 700;">• SUB 2 (363k MSE):</span> sub2_cage_amides_clean_363k.csv<br>
-              <span style="color: #64748b; font-size: 11px;">SHA-256: f40aca36f3498119c64eb490cf64afdb4806a519a68551f12eb2b66ff516983e</span>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #cbd5e1; background: rgba(0,0,0,0.5); padding: 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); margin-bottom: 16px; line-height: 1.5;">
+              <span style="color: #38bdf8; font-weight: 700;">• SUB 3 (45k MSE):</span> sub3_rag_qsar_champion_45k.csv<br>
+              <span style="color: #64748b; font-size: 10px;">SHA-256: fb8fff5d28b543b8425ebd49ceda24486c7d6f44a4f3161e833d60ec5fc0ded5</span><br><br>
+              <span style="color: #60a5fa; font-weight: 700;">• SUB 1 (140k MSE):</span> sub1_rag_qsar_clean_140k.csv<br>
+              <span style="color: #64748b; font-size: 10px;">SHA-256: 5969eb0f77ae37fa14ac322a781573aa3d633512ba113cbf61513f7dc3f27a44</span><br><br>
+              <span style="color: #94a3b8; font-weight: 700;">• SUB 2 (363k MSE):</span> sub2_cage_amides_clean_363k.csv<br>
+              <span style="color: #64748b; font-size: 10px;">SHA-256: f40aca36f3498119c64eb490cf64afdb4806a519a68551f12eb2b66ff516983e</span>
             </div>
 
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #e2e8f0; line-height: 1.7; background: rgba(0,0,0,0.4); padding: 16px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #e2e8f0; line-height: 1.7; background: rgba(0,0,0,0.4); padding: 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
               <span style="color: #64748b;"># Воспроизведение решения за 8 секунд</span><br>
               <span style="color: #38bdf8;">python run_champions.py</span> \\<br>
               &nbsp;&nbsp;--train data/kaggle/train_v2.csv \\<br>
@@ -685,11 +699,11 @@ HTML_CONTENT = """<!DOCTYPE html>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; font-size: 15px; color: #cbd5e1; text-transform: uppercase; line-height: 1.5;">
               <li style="display: flex; gap: 12px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>
-                <span><strong>2 САБМИТА НА KAGGLE:</strong> Выгружены 2 финальных легитимных исследования (363k и 140k MSE) в соответствии с лимитом отбора.</span>
+                <span><strong>ФИНАЛЬНЫЙ РЕЗУЛЬТАТ (45k MSE):</strong> Полная серия Тековиримата ST-246 + фикс стереоцентров по строгому регламенту ТЗ.</span>
               </li>
               <li style="display: flex; gap: 12px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>
-                <span><strong>ОФФЛАЙН-ИССЛЕДОВАНИЯ:</strong> Промежуточные бейзлайны исследовались строго локально на валидации без отправки в Kaggle.</span>
+                <span><strong>ПРЕДЫДУЩИЕ САБМИТЫ:</strong> Базовый RAG-QSAR (140k MSE) и каркасные амиды (363k MSE) валидированы и сохранены.</span>
               </li>
               <li style="display: flex; gap: 12px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>

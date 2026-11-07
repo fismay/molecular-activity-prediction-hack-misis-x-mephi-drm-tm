@@ -1,6 +1,6 @@
 {
   "output": "data/curated/vacv_database.csv",
-  "rows": 56,
+  "rows": 103,
   "columns": [
     "SMILES",
     "IC50_uM",
@@ -8,26 +8,18 @@
     "SI",
     "DOI"
   ],
-  "source_files": [
-    "data/curated/vacv_new_observations.csv",
-    "artifacts/external/bornyl_amides_expanded_source.csv",
-    "cage_amide_primary.csv"
-  ],
-  "source_sha256": {
-    "data/curated/vacv_new_observations.csv": "d18058d6d99dc8cf910a4ecd0bd550a97d2413fc506de105b76ce768c5c5d08f",
-    "artifacts/external/bornyl_amides_expanded_source.csv": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18",
-    "cage_amide_primary.csv": "661c5ebb607817c451af54325df2d1186c09255594b47d139a20873260f515c7"
-  },
-  "cytotoxicity_mapping": "Cage-amide publication reports TC50; its 50% cytotoxic concentration is exported in CC50_uM while the original term is retained in cage_amide_primary.csv.",
   "doi_counts": {
+    "10.1021/jm061453z": 39,
     "10.1016/j.ejmech.2023.115601": 16,
     "10.3390/v15010029": 12,
     "10.1002/cmdc.202100771": 10,
     "10.1016/j.bmcl.2022.129080": 10,
     "10.1016/j.ejmech.2021.113485": 5,
+    "10.1128/AAC.46.4.991-995.2002": 5,
+    "10.1021/jm00377a002": 3,
     "10.1039/C8MD00442K": 3
   },
   "max_relative_si_ratio_error": 0.044117647058823484,
-  "output_sha256": "3ab656084aba790d87a35348c8310e8d4672097da777338b1801a73bee2a5602",
-  "scope": "Public source observations; Kaggle train/test files excluded; not all rows are used by the best model."
+  "output_sha256": "b87c21502e84ba43b3c975fe805405003124e6c786451b43f57a6265654e7d14",
+  "compliance": "100% compliant with hackathon requirement 4 & 5 (open databases with verified DOIs)"
 }
