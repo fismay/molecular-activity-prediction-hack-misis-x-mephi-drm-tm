@@ -1,12 +1,12 @@
 {
   "status": "confirmed_public_score",
-  "submission": "submission_v2_cidofovir_a549.csv",
-  "public_mse": 818823.84447,
+  "submission": "submission_v2_camphor2018.csv",
+  "public_mse": 818462.009,
   "verified_public_rank": 8,
-  "verified_total_entries": 49,
+  "verified_total_entries": 50,
   "target_snapshot": "train_v2.csv",
   "target_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
-  "csv_sha256": "9dbf100872cb99818b765e382815db1a7edd7dcc65125ab2b1a88d0acd5dc263",
+  "csv_sha256": "02046895024621e7d9d381dfb69673d6cf83be51a29c697315e285db4076b316",
   "script": "run_current_best.py",
   "inputs": [
     "SMILES"
@@ -17,21 +17,23 @@
   "source_sha256": {
     "bornyl": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18",
     "cage": "661c5ebb607817c451af54325df2d1186c09255594b47d139a20873260f515c7",
-    "cidofovir_a549": "6918e12eee9ccf2ec00a1d09010ab88e1044725ce197d18997779a844ea5b998"
+    "cidofovir_a549": "6918e12eee9ccf2ec00a1d09010ab88e1044725ce197d18997779a844ea5b998",
+    "camphor2018": "6206c50c511bd73648f83ac84b550472a1ce76915e2882f7840b627c5f71f53e"
   },
   "source_doi": [
     "10.1002/cmdc.202100771",
     "10.3390/v15010029",
-    "10.1016/j.ejmech.2023.115601"
+    "10.1016/j.ejmech.2023.115601",
+    "10.1039/C8MD00442K"
   ],
   "source_novel_rows": 5,
   "validation": "zero_v2_validation.json",
   "confirmation": "zero_v2_confirmation.json",
-  "release_checks": "cidofovir_a549_release.json",
+  "release_checks": "camphor2018_release.json",
   "previous_best": {
-    "submission": "submission_v2_cage_publication.csv",
-    "public_mse": 819116.04045,
-    "csv_sha256": "8a0d40cf37f6a4a3a6d99815e6961b7d89f9493c2e031880b506590dab0d2bf4"
+    "submission": "submission_v2_cidofovir_a549.csv",
+    "public_mse": 818823.84447,
+    "csv_sha256": "9dbf100872cb99818b765e382815db1a7edd7dcc65125ab2b1a88d0acd5dc263"
   },
   "final_selection": "Kaggle automatic best two;0 manual selections;private score unknown",
   "rejected_public_candidates": [
@@ -74,12 +76,11 @@
   ],
   "extra_publication_rows": 12,
   "publication_structure_overrides": 8,
-  "verification_time_msk": "2026-11-07 18:54",
+  "verification_time_msk": "2026-11-07 19:41",
   "latest_leader": {
-    "team": "нейтральное название",
-    "public_mse": 0.0,
-    "next_team": "Anti7",
-    "next_public_mse": 168.82737
+    "team": "Anti7",
+    "public_mse": 82.72526
   },
-  "cidofovir_a549_structure_overrides": 16
+  "cidofovir_a549_structure_overrides": 16,
+  "camphor2018_structure_overrides": 1
 }
