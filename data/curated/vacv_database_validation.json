@@ -1,0 +1,29 @@
+{
+  "output": "data/curated/vacv_database.csv",
+  "rows": 44,
+  "columns": [
+    "SMILES",
+    "IC50_uM",
+    "CC50_uM",
+    "SI",
+    "DOI"
+  ],
+  "source_files": [
+    "data/curated/vacv_new_observations.csv",
+    "artifacts/external/bornyl_amides_expanded_source.csv"
+  ],
+  "source_sha256": {
+    "data/curated/vacv_new_observations.csv": "d18058d6d99dc8cf910a4ecd0bd550a97d2413fc506de105b76ce768c5c5d08f",
+    "artifacts/external/bornyl_amides_expanded_source.csv": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18"
+  },
+  "doi_counts": {
+    "10.1016/j.ejmech.2023.115601": 16,
+    "10.1002/cmdc.202100771": 10,
+    "10.1016/j.bmcl.2022.129080": 10,
+    "10.1016/j.ejmech.2021.113485": 5,
+    "10.1039/C8MD00442K": 3
+  },
+  "max_relative_si_ratio_error": 0.044117647058823484,
+  "output_sha256": "93e70466ed71d3b7759cba4ebe8675e4b4bb2a0c73a426b6f3aead42440c7738",
+  "scope": "Public source observations; Kaggle train/test files excluded; not all rows are used by the best model."
+}
