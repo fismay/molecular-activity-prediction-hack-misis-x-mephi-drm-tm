@@ -8,9 +8,6 @@ import pandas as pd
 from rdkit import Chem
 
 
-CURATED = Path('data/curated/vacv_new_observations.csv')
-BORNyl = Path('artifacts/external/bornyl_amides_expanded_source.csv')
-CAGE = Path('cage_amide_primary.csv')
 COLUMNS = ['SMILES', 'IC50_uM', 'CC50_uM', 'SI', 'DOI']
 
 
