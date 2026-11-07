@@ -1,0 +1,69 @@
+{
+  "scope": "SMILES-only structure matching; no test metadata, concentration, or target column read",
+  "source_sha256": "cad5bb1456f3772b27ef0fad23b720c3f9917862ab3e7bd5330860d072806370",
+  "train_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+  "test_sha256": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+  "source_rows": 56,
+  "train_rows": 320,
+  "test_rows": 597,
+  "doi_counts": {
+    "10.1002/cmdc.202100771": {
+      "source_rows": 10,
+      "exact_test_structures": 5,
+      "achiral_test_structures": 9,
+      "achiral_train_structures": 9,
+      "novel_test_structures": 1,
+      "exact_train_measurements": 5,
+      "exact_train_disagreements_gt_5pct": 0
+    },
+    "10.1016/j.bmcl.2022.129080": {
+      "source_rows": 10,
+      "exact_test_structures": 0,
+      "achiral_test_structures": 0,
+      "achiral_train_structures": 0,
+      "novel_test_structures": 0,
+      "exact_train_measurements": 0,
+      "exact_train_disagreements_gt_5pct": 0
+    },
+    "10.1016/j.ejmech.2021.113485": {
+      "source_rows": 5,
+      "exact_test_structures": 0,
+      "achiral_test_structures": 4,
+      "achiral_train_structures": 1,
+      "novel_test_structures": 4,
+      "exact_train_measurements": 0,
+      "exact_train_disagreements_gt_5pct": 0
+    },
+    "10.1016/j.ejmech.2023.115601": {
+      "source_rows": 16,
+      "exact_test_structures": 16,
+      "achiral_test_structures": 16,
+      "achiral_train_structures": 0,
+      "novel_test_structures": 16,
+      "exact_train_measurements": 0,
+      "exact_train_disagreements_gt_5pct": 0
+    },
+    "10.1039/C8MD00442K": {
+      "source_rows": 3,
+      "exact_test_structures": 2,
+      "achiral_test_structures": 3,
+      "achiral_train_structures": 0,
+      "novel_test_structures": 3,
+      "exact_train_measurements": 0,
+      "exact_train_disagreements_gt_5pct": 0
+    },
+    "10.3390/v15010029": {
+      "source_rows": 12,
+      "exact_test_structures": 0,
+      "achiral_test_structures": 9,
+      "achiral_train_structures": 3,
+      "novel_test_structures": 9,
+      "exact_train_measurements": 0,
+      "exact_train_disagreements_gt_5pct": 0
+    }
+  },
+  "novel_exact_test_rows": 23,
+  "novel_achiral_test_rows": 34,
+  "source_train_disagreements_gt_5pct": 4,
+  "limitations": "Structural identity does not prove assay equivalence. Achiral matching can merge stereoisomers; review the source before any override."
+}
