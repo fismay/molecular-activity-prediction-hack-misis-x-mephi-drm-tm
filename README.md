@@ -51,7 +51,7 @@
 ## Воспроизведение с другого компьютера
 
 1. Получить доступ к этому приватному репозиторию и клонировать его.
-2. Установить Python **3.13**. Из [Kaggle Data](https://www.kaggle.com/competitions/molecular-activity-prediction-hack/data) скачать `train_v2.csv`, `test.csv`, `sample_submit.csv` без изменений и положить в `data/kaggle/`.
+2. Установить Python **3.13**. Из [Kaggle Data](https://www.kaggle.com/competitions/molecular-activity-prediction-hack/data) скачать `train_v2.csv`, `test.csv`, `sample_submit.csv` без изменений и положить в `data/kaggle/`. Для расширенной валидации ниже дополнительно нужен исторический `train.csv`; финальная сборка submission его не читает.
 3. Из корня репозитория выполнить:
 
 ```bash
@@ -65,7 +65,15 @@ python3.13 -m venv .venv
 Для отдельной проверки модели и базы:
 
 ```bash
-.venv/bin/python validate_zero_v2.py
+.venv/bin/python validate_zero_v2.py \
+  --source artifacts/external/bornyl_amides_expanded_source.csv \
+  --report zero_v2_validation.json \
+  --cache artifacts/zero_v2_validation.npz
+.venv/bin/python validate_zero_v2.py \
+  --source artifacts/external/bornyl_amides_expanded_source.csv \
+  --report zero_v2_confirmation.json \
+  --cache artifacts/zero_v2_confirmation.npz \
+  --confirm source_stereo_only__raw
 .venv/bin/python build_new_dataset.py
 .venv/bin/python build_submission_database.py
 ```
