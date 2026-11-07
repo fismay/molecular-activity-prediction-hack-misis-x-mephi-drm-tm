@@ -685,7 +685,7 @@ HTML_CONTENT = """<!DOCTYPE html>
           </div>
 
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; margin-top: 14px;">
-            100% ВОСПРОИЗВОДИМОСТЬ И СТРОГОЕ СОБЛЮДЕНИЕ ПРАВИЛ SOREVNOVANIYA
+            100% ВОСПРОИЗВОДИМОСТЬ И СТРОГОЕ СОБЛЮДЕНИЕ ПРАВИЛ СОРЕВНОВАНИЯ
           </div>
         </div>
 
