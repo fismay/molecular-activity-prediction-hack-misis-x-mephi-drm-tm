@@ -1,5 +1,14 @@
 # Molecular Activity Prediction — MISIS x MEPhI DRM TM
 
+## Что сдаём организаторам
+
+- Эксперименты и отрицательные результаты: `EXPERIMENTS.md`, `RESEARCH_LOG_20261107.md`, сценарии `screen_*.py`, `confirm_*.py` и JSON-отчёты.
+- Финальный пайплайн: `run_best.py` и `vacv_zero_hurdle.py`; групповая проверка: `validate_zero_v2.py`, отчёты `zero_v2_validation.json` и `zero_v2_confirmation.json`.
+- Выгрузка и проверка открытых данных: `collect_chembl.py`, `collect_vacv_2022.py`, `build_new_dataset.py`, `build_submission_database.py` и ссылки на первичные измерения в исходных таблицах.
+- Итоговая база: `data/curated/vacv_database.csv` с колонками `SMILES,IC50_uM,CC50_uM,SI,DOI`. В ней 44 открытых точных наблюдения из пяти публикаций. `data/curated/vacv_database_validation.json` содержит контрольные суммы и проверку SI. Пересборка: `.venv/bin/python build_new_dataset.py` и `.venv/bin/python build_submission_database.py`.
+
+Подробное происхождение 34 записей ChEMBL, включая ID и URL трёх измерений, находится в `data/curated/vacv_new_observations.csv`; для 10 bornyl-записей публикация, DOI, измерения и URL находятся в `artifacts/external/bornyl_amides_expanded_source.csv`. Итоговая база предназначена для защиты и проверки источников. Лучшая модель использует только пять новых bornyl-структур после исключения пересечений с train; остальные записи не добавлены автоматически, поскольку их включение не улучшило групповую проверку.
+
 ## Запуск на другом компьютере
 
 Клонируйте этот приватный репозиторий с доступом GitHub. Установите Python 3.13 и зависимости, затем скачайте с вкладки Data соревнования три файла `train_v2.csv`, `test.csv`, `sample_submit.csv` в `data/kaggle/` (эта папка исключена из Git). Из корня репозитория запустите:

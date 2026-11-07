@@ -73,6 +73,10 @@ def main():
         if key in unique:
             raise ValueError('Cross-source canonical duplicate requires manual review')
         for field in ['ic50_activity_id','cc50_activity_id','si_activity_id']:
+            activity_id = number(row[field])
+            if not activity_id.is_integer():
+                raise ValueError('Non-integer ChEMBL activity ID')
+            row[field] = int(activity_id)
             row[field.replace('_activity_id','_url')] = BASE+str(row[field])+'.json'
         unique[key] = row
     OUTPUT.parent.mkdir(parents=True,exist_ok=True)
