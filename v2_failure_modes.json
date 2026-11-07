@@ -1,0 +1,40 @@
+{
+  "train_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+  "cache_sha256": "00231d2a535498a9217bd8eea4b9e66176c464ea68db63887e882612bbf3b896",
+  "recipe": "source_stereo_only__raw",
+  "validation": "15 cached canonical-group folds, with repeated molecules across seeds",
+  "heldout_observations": 971,
+  "unique_heldout_rows": 311,
+  "pooled_mse": 2857928.8252768256,
+  "strata": {
+    "zero": {
+      "heldout_observations": 254,
+      "mse": 16286.10244708557,
+      "error_share": 0.001490665637439603
+    },
+    "positive_lt_100": {
+      "heldout_observations": 606,
+      "mse": 569595.260613443,
+      "error_share": 0.12438509795528979
+    },
+    "100_to_1000": {
+      "heldout_observations": 93,
+      "mse": 382854.9937158006,
+      "error_share": 0.012830589959079574
+    },
+    "ge_1000": {
+      "heldout_observations": 18,
+      "mse": 132785109.83194011,
+      "error_share": 0.8612936464481911
+    }
+  },
+  "top_one_row_error_share": 0.7997775113321055,
+  "top_five_rows_error_share": 0.9550849779721934,
+  "top_error_scaffold_train_count": 11,
+  "top_error_scaffold_target_range": [
+    0.0,
+    36066.667
+  ],
+  "top_error_scaffold_error_share": 0.8866193441285045,
+  "note": "Diagnostics use true training targets only after held-out prediction; no metadata or concentrations enter the model."
+}
