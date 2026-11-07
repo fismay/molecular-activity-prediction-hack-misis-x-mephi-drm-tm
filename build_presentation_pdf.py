@@ -203,7 +203,7 @@ HTML_CONTENT = """<!DOCTYPE html>
         </div>
         <div style="width: 2px; height: 30px; background: rgba(255,255,255,0.3);"></div>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: #94a3b8;">
-          ВЕРИФИЦИРОВАННЫЙ РЕЗУЛЬТАТ: <strong style="color: #38bdf8;">63.46547 MSE</strong>
+          ВЕРИФИЦИРОВАННЫЙ РЕЗУЛЬТАТ: <strong style="color: #38bdf8;">140 243 MSE</strong>
         </div>
       </div>
     </div>
@@ -595,18 +595,13 @@ HTML_CONTENT = """<!DOCTYPE html>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: rgba(56, 189, 248, 0.05); border-left: 3px solid #38bdf8; border-radius: 4px;">
-          <span style="font-size: 16px; text-transform: uppercase; color: #ffffff;">4. RAG-АУДИТ 3-ДЕЗАГУАНИНОВ, ТЕКОВИРИМАТА И ФОСФОНАТОВ (СКАЧОК В 94 РАЗА)</span>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: #38bdf8;">8 663.9 MSE</span>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8; border-radius: 4px;">
-          <span style="font-size: 16px; text-transform: uppercase; color: #ffffff;">5. ZERO-HURDLE ЭЛИМИНАЦИЯ НЕАКТИВНЫХ СОЕДИНЕНИЙ + АДАМАНТАНЫ</span>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: #38bdf8;">166.8 MSE</span>
+          <span style="font-size: 16px; text-transform: uppercase; color: #ffffff;">4. КАРКАСНЫЕ АДАМАНТАНОВЫЕ АМИДЫ (DOI: 10.3390/v15010029)</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: #38bdf8;">363 764.4 MSE</span>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 22px 28px; background: rgba(56, 189, 248, 0.16); border: 2px solid #38bdf8; border-radius: 6px;">
-          <span style="font-family: 'Unbounded', sans-serif; font-size: 18px; font-weight: 800; text-transform: uppercase; color: #ffffff;">6. ФИНАЛЬНЫЙ АНСАМБЛЬ ЧЕМПИОНОВ (RAG-QSAR)</span>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 900; color: #38bdf8;">63.46547 MSE</span>
+          <span style="font-family: 'Unbounded', sans-serif; font-size: 18px; font-weight: 800; text-transform: uppercase; color: #ffffff;">5. ЧИСТЫЙ RAG-QSAR АНСАМБЛЬ (ЛИТЕРАТУРА С DOI + ZERO-HURDLE)</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 900; color: #38bdf8;">140 243.8 MSE</span>
         </div>
       </div>
     </div>
@@ -636,7 +631,7 @@ HTML_CONTENT = """<!DOCTYPE html>
             </div>
 
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #e2e8f0; line-height: 1.8; background: rgba(0,0,0,0.5); padding: 24px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); margin-bottom: 24px;">
-              <span style="color: #64748b;"># Воспроизведение решения за 3 секунды</span><br>
+              <span style="color: #64748b;"># Воспроизведение решения за 8 секунд</span><br>
               <span style="color: #38bdf8;">python run_champions.py</span> \\<br>
               &nbsp;&nbsp;--train data/kaggle/train_v2.csv \\<br>
               &nbsp;&nbsp;--test data/kaggle/test.csv \\<br>
@@ -645,7 +640,7 @@ HTML_CONTENT = """<!DOCTYPE html>
           </div>
 
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.15); pt: 16px; padding-top: 16px;">
-            SHA-256: 89eb51c0211fc00f0f27c76927d8af32fb492204b8093bf5f4cba968b50619cf
+            SHA-256: 5969eb0f77ae37fa14ac322a781573aa3d633512ba113cbf61513f7dc3f27a44
           </div>
         </div>
 
@@ -659,7 +654,7 @@ HTML_CONTENT = """<!DOCTYPE html>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px; font-size: 16px; color: #cbd5e1; text-transform: uppercase; line-height: 1.5;">
               <li style="display: flex; gap: 14px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>
-                <span><strong>РЕЗУЛЬТАТ 63.46547 MSE:</strong> Снижение квадратичной ошибки в 12 896 раз за счёт химико-биологического анализа.</span>
+                <span><strong>РЕЗУЛЬТАТ 140 243.8 MSE:</strong> Снижение квадратичной ошибки в 11.7 раз за счёт химико-биологического анализа и RAG-поиска.</span>
               </li>
               <li style="display: flex; gap: 14px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>
