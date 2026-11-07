@@ -2,7 +2,7 @@
   "status": "confirmed_public_score",
   "submission": "submission_v2_stereo_hurdle.csv",
   "public_mse": 820681.16278,
-  "verified_public_rank": 2,
+  "verified_public_rank": 3,
   "verified_total_entries": 39,
   "target_snapshot": "train_v2.csv",
   "target_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
