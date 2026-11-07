@@ -3,7 +3,7 @@
   "submission": "submission_v2_cage_publication.csv",
   "public_mse": 819116.04045,
   "verified_public_rank": 6,
-  "verified_total_entries": 41,
+  "verified_total_entries": 49,
   "target_snapshot": "train_v2.csv",
   "target_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
   "csv_sha256": "8a0d40cf37f6a4a3a6d99815e6961b7d89f9493c2e031880b506590dab0d2bf4",
@@ -60,9 +60,21 @@
     {
       "file": "submission_v2_new_source_atom_blend.csv",
       "public_mse": 840430.44236
+    },
+    {
+      "file": "submission_v2_canonical_probability.csv",
+      "public_mse": 822186.48056
+    },
+    {
+      "file": "submission_v2_adaptive_gate.csv",
+      "public_mse": 820169.11311
     }
   ],
   "extra_publication_rows": 12,
   "publication_structure_overrides": 8,
-  "verification_time_msk": "2026-11-07 15:03"
+  "verification_time_msk": "2026-11-07 18:36",
+  "latest_leader": {
+    "team": "Anti7",
+    "public_mse": 168.82737
+  }
 }
