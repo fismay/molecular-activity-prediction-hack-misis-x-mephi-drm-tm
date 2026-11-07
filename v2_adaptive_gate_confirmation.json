@@ -1,0 +1,71 @@
+{
+  "train_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+  "source_sha256": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18",
+  "seed": 48373,
+  "groups": "canonical molecule",
+  "fold_count": 5,
+  "threshold_selected_on_prior_15_folds": 5000.0,
+  "rule": "source_stereo prediction when baseline predicted SI < 5000; otherwise source_stereo_only",
+  "baseline_pooled_mse": 2788230.6813923386,
+  "candidate_pooled_mse": 2752762.4470602227,
+  "relative_improvement": 0.012720695804984269,
+  "all_folds_improved": false,
+  "folds": [
+    {
+      "fold": 0,
+      "validation_rows": 64,
+      "gated_rows": 64,
+      "baseline_mse": 429071.69325828424,
+      "candidate_mse": 398851.125258335,
+      "baseline_sse": 27460588.36853019,
+      "candidate_sse": 25526472.01653344,
+      "below_1000_baseline_sse": 2912294.6204135693,
+      "below_1000_candidate_sse": 2347962.489996175
+    },
+    {
+      "fold": 1,
+      "validation_rows": 64,
+      "gated_rows": 63,
+      "baseline_mse": 1278600.4691824643,
+      "candidate_mse": 1288566.5124271326,
+      "baseline_sse": 81830430.02767771,
+      "candidate_sse": 82468256.79533648,
+      "below_1000_baseline_sse": 78324880.37209854,
+      "below_1000_candidate_sse": 79253040.85788605
+    },
+    {
+      "fold": 2,
+      "validation_rows": 65,
+      "gated_rows": 64,
+      "baseline_mse": 11556487.071624665,
+      "candidate_mse": 11471756.874828435,
+      "baseline_sse": 751171659.6556032,
+      "candidate_sse": 745664196.8638483,
+      "below_1000_baseline_sse": 11187624.051180655,
+      "below_1000_candidate_sse": 5083554.708485726
+    },
+    {
+      "fold": 3,
+      "validation_rows": 64,
+      "gated_rows": 64,
+      "baseline_mse": 219036.75781265923,
+      "candidate_mse": 139434.2849689658,
+      "baseline_sse": 14018352.50001019,
+      "candidate_sse": 8923794.238013811,
+      "below_1000_baseline_sse": 14018352.50001019,
+      "below_1000_candidate_sse": 8923794.238013811
+    },
+    {
+      "fold": 4,
+      "validation_rows": 63,
+      "gated_rows": 63,
+      "baseline_mse": 281790.2776782075,
+      "candidate_mse": 290496.24040538404,
+      "baseline_sse": 17752787.493727073,
+      "candidate_sse": 18301263.145539194,
+      "below_1000_baseline_sse": 5749787.526667215,
+      "below_1000_candidate_sse": 7433007.264078568
+    }
+  ],
+  "limitation": "New grouped folds reuse the same small training set and are not an independent external cohort."
+}

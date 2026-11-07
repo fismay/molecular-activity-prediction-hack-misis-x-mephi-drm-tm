@@ -1,0 +1,23 @@
+{
+  "model_rule": "Use source_stereo if baseline predicted SI < 5000.0; otherwise use source_stereo_only",
+  "source_rule": "Published exact unique achiral match, not in train",
+  "inputs_to_predictor": [
+    "SMILES"
+  ],
+  "rows": 597,
+  "gated_rows_before_source": 596,
+  "publication_rows": 8,
+  "changed_from_confirmed": 588,
+  "finite_nonnegative": true,
+  "sha256": {
+    "data/kaggle/train_v2.csv": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+    "data/kaggle/test.csv": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+    "data/kaggle/sample_submit.csv": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c",
+    "submission_v2_stereo_hurdle.csv": "0889724213860bd58db86e0b5ed0ed984160de4d67d9e943a0f199758ca96bae",
+    "submission_v2_cage_publication.csv": "8a0d40cf37f6a4a3a6d99815e6961b7d89f9493c2e031880b506590dab0d2bf4",
+    "cage_amide_primary.csv": "661c5ebb607817c451af54325df2d1186c09255594b47d139a20873260f515c7",
+    "artifacts/zero_v2_hurdle_nn.joblib": "a852034b51793a483dce4152cc93cbcd49393e6226a0bb56cb84cf040424739d",
+    "submission_v2_adaptive_gate.csv": "c72198bca88d91fafec88d442d3c6b029b7639d666a895e4ee90b039722f7442"
+  },
+  "limitations": "Grouped CV reuses the same train; hidden Kaggle targets unavailable."
+}
