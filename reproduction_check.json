@@ -1,0 +1,44 @@
+{
+  "inputs": [
+    "SMILES"
+  ],
+  "changed": "tie-aware neighbor component gains verified external measurements; optional stereo compatibility and probability calibration",
+  "neighbor_recipe": "scaffold-stereo",
+  "isotonic_weight": 0.5,
+  "isotonic_calibration": "inner3 grouped raw probabilities",
+  "graph_weight": 0.0,
+  "graph_transductive_unlabeled_test_smiles": false,
+  "source_doi": [
+    "10.1002/cmdc.202100771"
+  ],
+  "source_policy": "derived",
+  "source_rows": 10,
+  "source_rows_removed_training_duplicates": 5,
+  "source_novel_rows": 5,
+  "source_sha256": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18",
+  "source_identity_resolution": [
+    "primary table and experimental nomenclature confirm exo-bornyl (1R,2R,4R) structure; 7b/7e additionally match ChEMBL IC50 structures and values",
+    "table/discussion b=Cl,c=Br,e=NO2,l=cyclohexyl; independently confirmed by ChEMBL IC50 structures and values; experimental-section labels conflict"
+  ],
+  "checks": {
+    "rows": 597,
+    "exact_order": true,
+    "finite": true,
+    "forbidden_columns_mutation_identical": true,
+    "other_columns_removed_identical": true,
+    "saved_model_identical": true
+  },
+  "range": [
+    0.5796746895473694,
+    11481.967471247825
+  ],
+  "sha256": {
+    "train.csv": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+    "test.csv": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+    "sample_submit.csv": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c",
+    "reproduced_submission.csv": "3c52d5279ddc315f3107a20c35a8765e24e702ad69fba2982f63fea8f1dd5a9f"
+  },
+  "reproduced_original_csv_byte_identical": true,
+  "expected_csv_sha256": "3c52d5279ddc315f3107a20c35a8765e24e702ad69fba2982f63fea8f1dd5a9f",
+  "scope": "Rebuilds external-neighbor and isotonic stage from existing Brier artifact; does not retrain Brier base from scratch. Historical Kaggle score is no longer current after regrading."
+}
