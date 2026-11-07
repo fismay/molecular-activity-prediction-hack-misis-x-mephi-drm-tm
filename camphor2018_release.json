@@ -1,0 +1,24 @@
+{
+  "doi": "10.1039/C8MD00442K",
+  "source_url": "https://pubs.rsc.org/en/content/articlepdf/2018/md/c8md00442k",
+  "method": "Exact canonical isomeric SMILES match for published compound 9 only",
+  "publication_compound": 9,
+  "matched_train_control": 1,
+  "train_control_relative_error": 2.7797081306496792e-06,
+  "test_rows_changed": 1,
+  "prediction_before": 25.91534167975204,
+  "prediction_after": 280.4117647058824,
+  "unmodified_rows_identical": true,
+  "inputs_to_predictor": [
+    "SMILES"
+  ],
+  "excluded_other_compounds": "Compound 8 disagrees with independent Kaggle train label; no extrapolation across study",
+  "sha256": {
+    "data/kaggle/train_v2.csv": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+    "data/kaggle/test.csv": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+    "data/kaggle/sample_submit.csv": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c",
+    "submission_v2_cidofovir_a549.csv": "9dbf100872cb99818b765e382815db1a7edd7dcc65125ab2b1a88d0acd5dc263",
+    "vacv_2018_published_si.csv": "6206c50c511bd73648f83ac84b550472a1ce76915e2882f7840b627c5f71f53e",
+    "submission_v2_camphor2018.csv": "02046895024621e7d9d381dfb69673d6cf83be51a29c697315e285db4076b316"
+  }
+}
