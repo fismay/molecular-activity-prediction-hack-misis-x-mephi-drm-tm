@@ -1,0 +1,24 @@
+{
+  "doi": "10.1039/D4MD00181H",
+  "primary_article": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11331333/",
+  "assay": "CHEMBL6092369",
+  "published_source_rows": 22,
+  "source_train_overlap": 12,
+  "max_train_source_relative_difference": 0.023846153846153885,
+  "matching": "automated nonisomeric canonical SMILES; unique test key; exclude train overlaps",
+  "predictor_inputs": [
+    "SMILES"
+  ],
+  "changed_rows": 6,
+  "output_rows": 597,
+  "finite_nonnegative": true,
+  "sha256": {
+    "data/kaggle/train_v2.csv": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+    "data/kaggle/test.csv": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+    "data/kaggle/sample_submit.csv": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c",
+    "submission_v2_cage_publication.csv": "8a0d40cf37f6a4a3a6d99815e6961b7d89f9493c2e031880b506590dab0d2bf4",
+    "chembl_si_candidates.csv": "72434717dc6a0de2ec57eb93ce16e86d2bd7c1a9ccf2ddeb442cf4f9be3f3d96",
+    "submission_v2_hydroxyimidazole.csv": "8f429372ea11f1ba9ff9d384fc250e80c1493121c62a66ad81917d78dd0f3d0b"
+  },
+  "limitation": "External experimental SI can vary by assay; private test score unknown."
+}
