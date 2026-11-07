@@ -14,22 +14,23 @@ def main():
     parser.add_argument('--data-dir', type=Path, default=Path('data/kaggle'))
     parser.add_argument('--output', type=Path, default=Path('submission_v2_camphor2018.csv'))
     args = parser.parse_args()
+    src_dir = Path(__file__).resolve().parent
     base = Path('submission_v2_stereo_hurdle.csv')
-    subprocess.run([sys.executable, 'run_best.py', '--data-dir', str(args.data_dir),
+    subprocess.run([sys.executable, str(src_dir / 'run_best.py'), '--data-dir', str(args.data_dir),
                     '--output', str(base)], check=True)
     cage = Path('submission_v2_cage_publication.csv')
-    subprocess.run([sys.executable, 'vacv_cage_publication.py',
+    subprocess.run([sys.executable, str(src_dir / 'vacv_cage_publication.py'),
                     '--train', str(args.data_dir / 'train_v2.csv'),
                     '--test', str(args.data_dir / 'test.csv'),
                     '--sample', str(args.data_dir / 'sample_submit.csv'),
                     '--base', str(base), '--output', str(cage)], check=True)
     cidofovir = Path('submission_v2_cidofovir_a549.csv')
-    subprocess.run([sys.executable, 'vacv_cidofovir_a549_publication.py',
+    subprocess.run([sys.executable, str(src_dir / 'vacv_cidofovir_a549_publication.py'),
                     '--train', str(args.data_dir / 'train_v2.csv'),
                     '--test', str(args.data_dir / 'test.csv'),
                     '--sample', str(args.data_dir / 'sample_submit.csv'),
                     '--base', str(cage), '--output', str(cidofovir)], check=True)
-    subprocess.run([sys.executable, 'vacv_camphor2018_publication.py',
+    subprocess.run([sys.executable, str(src_dir / 'vacv_camphor2018_publication.py'),
                     '--train', str(args.data_dir / 'train_v2.csv'),
                     '--test', str(args.data_dir / 'test.csv'),
                     '--sample', str(args.data_dir / 'sample_submit.csv'),

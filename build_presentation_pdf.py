@@ -570,37 +570,61 @@ HTML_CONTENT = """<!DOCTYPE html>
     <div class="frame-vline"></div>
     <div class="frame-hline"></div>
 
-    <div class="top-label">BENCHMARKS & EXPERIMENTS</div>
+    <div class="top-label">RESEARCH DYNAMICS & KAGGLE SUBMISSIONS</div>
     <div class="slide-num">07 / 08</div>
 
-    <div class="content-area" style="margin-top: 80px;">
-      <h2 class="font-heading" style="font-size: 58px; margin-bottom: 40px;">
-        MODEL <span class="text-cyan">PROGRESSION</span>
+    <div class="content-area" style="margin-top: 70px;">
+      <h2 class="font-heading" style="font-size: 52px; margin-bottom: 28px;">
+        RESEARCH <span class="text-cyan">& SUBMISSIONS</span>
       </h2>
 
-      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 1550px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: rgba(255,255,255,0.02); border-left: 3px solid rgba(255,255,255,0.3); border-radius: 4px;">
-          <span style="font-size: 16px; text-transform: uppercase; color: #94a3b8;">1. БЕЙЗЛАЙН RANDOM FOREST (MORGAN FP + RDKIT ДЕСКРИПТОРЫ)</span>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: #f87171;">1 645 802.9 MSE</span>
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 1550px;">
+        <!-- Subheader: Offline Validation -->
+        <div style="font-family: 'Unbounded', sans-serif; font-size: 13px; font-weight: 800; color: #94a3b8; letter-spacing: 0.08em; text-transform: uppercase;">
+          ОФФЛАЙН-ИССЛЕДОВАНИЯ (ЛОКАЛЬНАЯ КРОСС-ВАЛИДАЦИЯ, БЕЗ ОТПРАВКИ В KAGGLE):
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: rgba(255,255,255,0.02); border-left: 3px solid rgba(255,255,255,0.3); border-radius: 4px;">
-          <span style="font-size: 16px; text-transform: uppercase; color: #94a3b8;">2. СИМВОЛЬНЫЙ TF-IDF N-ГРАММ (3–7) + СИНТАКСИС SMILES</span>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: #fbbf24;">4 319 947.2 MSE</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 22px; background: rgba(255,255,255,0.02); border-left: 3px solid rgba(255,255,255,0.25); border-radius: 4px;">
+          <span style="font-size: 15px; text-transform: uppercase; color: #94a3b8;">1. БЕЙЗЛАЙН RANDOM FOREST (MORGAN FP + RDKIT ДЕСКРИПТОРЫ)</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: #f87171;">1 645 802.9 MSE</span>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: rgba(255,255,255,0.02); border-left: 3px solid rgba(255,255,255,0.4); border-radius: 4px;">
-          <span style="font-size: 16px; text-transform: uppercase; color: #cbd5e1;">3. СТЕРЕОХИМИЧЕСКИЙ HURDLE И БОРНИЛЬНЫЕ ИЗОМЕРЫ</span>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: #60a5fa;">818 462.0 MSE</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 22px; background: rgba(255,255,255,0.02); border-left: 3px solid rgba(255,255,255,0.25); border-radius: 4px;">
+          <span style="font-size: 15px; text-transform: uppercase; color: #94a3b8;">2. СИМВОЛЬНЫЙ TF-IDF N-ГРАММ (3–7) + СИНТАКСИС SMILES</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: #fbbf24;">4 319 947.2 MSE</span>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: rgba(56, 189, 248, 0.05); border-left: 3px solid #38bdf8; border-radius: 4px;">
-          <span style="font-size: 16px; text-transform: uppercase; color: #ffffff;">4. КАРКАСНЫЕ АДАМАНТАНОВЫЕ АМИДЫ (DOI: 10.3390/v15010029)</span>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: #38bdf8;">363 764.4 MSE</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 22px; background: rgba(255,255,255,0.02); border-left: 3px solid rgba(255,255,255,0.3); border-radius: 4px; margin-bottom: 8px;">
+          <span style="font-size: 15px; text-transform: uppercase; color: #cbd5e1;">3. СТЕРЕОХИМИЧЕСКИЙ HURDLE И БОРНИЛЬНЫЕ ИЗОМЕРЫ</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: #60a5fa;">818 462.0 MSE</span>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 22px 28px; background: rgba(56, 189, 248, 0.16); border: 2px solid #38bdf8; border-radius: 6px;">
-          <span style="font-family: 'Unbounded', sans-serif; font-size: 18px; font-weight: 800; text-transform: uppercase; color: #ffffff;">5. ЧИСТЫЙ RAG-QSAR АНСАМБЛЬ (ЛИТЕРАТУРА С DOI + ZERO-HURDLE)</span>
+        <!-- Subheader: Official Kaggle Submissions -->
+        <div style="font-family: 'Unbounded', sans-serif; font-size: 13px; font-weight: 800; color: #38bdf8; letter-spacing: 0.08em; text-transform: uppercase;">
+          ДВА ОФИЦИАЛЬНЫХ САБМИТА, ВЫГРУЖЕННЫХ НА KAGGLE:
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: rgba(56, 189, 248, 0.07); border-left: 4px solid #38bdf8; border-radius: 4px;">
+          <div>
+            <div style="font-family: 'Unbounded', sans-serif; font-size: 15px; font-weight: 800; color: #ffffff; text-transform: uppercase;">
+              KAGGLE SUBMISSION 2: КАРКАСНЫЕ АДАМАНТАНОВЫЕ АМИДЫ (DOI: 10.3390/v15010029)
+            </div>
+            <div style="font-size: 13px; color: #94a3b8; text-transform: uppercase; margin-top: 4px;">
+              ТОЧНОЕ СОПОСТАВЛЕНИЕ АХИРАЛЬНЫХ ГРАФОВ RDKIT ДЛЯ СУПЕР-ИНГИБИТОРОВ 18A (SI=18 214) И 18B (SI=12 300)
+            </div>
+          </div>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; color: #38bdf8;">363 764.4 MSE</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 26px; background: rgba(56, 189, 248, 0.16); border: 2px solid #38bdf8; border-radius: 6px;">
+          <div>
+            <div style="font-family: 'Unbounded', sans-serif; font-size: 16px; font-weight: 800; color: #ffffff; text-transform: uppercase;">
+              KAGGLE SUBMISSION 1: ФИНАЛЬНЫЙ RAG-QSAR АНСАМБЛЬ (БАЗА С DOI + ZERO-HURDLE)
+            </div>
+            <div style="font-size: 13px; color: #cbd5e1; text-transform: uppercase; margin-top: 4px;">
+              МУЛЬТИ-ЛИТЕРАТУРНЫЙ КОНВЕЙЕР (ТЕКОВИРИМАТ, 3-ДЕЗАГУАНИНЫ, ФОСФОНАТЫ) + ML-РЕГРЕССОР
+            </div>
+          </div>
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 900; color: #38bdf8;">140 243.8 MSE</span>
         </div>
       </div>
@@ -623,14 +647,21 @@ HTML_CONTENT = """<!DOCTYPE html>
       </h2>
 
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1550px;">
-        <!-- Left: Command Execution -->
-        <div style="background: rgba(0, 0, 0, 0.35); border: 2px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 36px; display: flex; flex-direction: column; justify-content: space-between;">
+        <!-- Left: Command Execution & Submission Files -->
+        <div style="background: rgba(0, 0, 0, 0.35); border: 2px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-family: 'Unbounded', sans-serif; font-size: 20px; font-weight: 800; color: #38bdf8; margin-bottom: 20px;">
-              ЗАПУСК ПАЙПЛАЙНА В ОДНУ СТРОКУ
+            <div style="font-family: 'Unbounded', sans-serif; font-size: 18px; font-weight: 800; color: #38bdf8; margin-bottom: 16px;">
+              ДВА ОФИЦИАЛЬНЫХ САБМИТА НА KAGGLE
             </div>
 
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #e2e8f0; line-height: 1.8; background: rgba(0,0,0,0.5); padding: 24px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); margin-bottom: 24px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #cbd5e1; background: rgba(0,0,0,0.5); padding: 18px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); margin-bottom: 18px; line-height: 1.6;">
+              <span style="color: #38bdf8; font-weight: 700;">• SUB 1 (140k MSE):</span> sub1_rag_qsar_clean_140k.csv<br>
+              <span style="color: #64748b; font-size: 11px;">SHA-256: 5969eb0f77ae37fa14ac322a781573aa3d633512ba113cbf61513f7dc3f27a44</span><br><br>
+              <span style="color: #38bdf8; font-weight: 700;">• SUB 2 (363k MSE):</span> sub2_cage_amides_clean_363k.csv<br>
+              <span style="color: #64748b; font-size: 11px;">SHA-256: f40aca36f3498119c64eb490cf64afdb4806a519a68551f12eb2b66ff516983e</span>
+            </div>
+
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #e2e8f0; line-height: 1.7; background: rgba(0,0,0,0.4); padding: 16px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
               <span style="color: #64748b;"># Воспроизведение решения за 8 секунд</span><br>
               <span style="color: #38bdf8;">python run_champions.py</span> \\<br>
               &nbsp;&nbsp;--train data/kaggle/train_v2.csv \\<br>
@@ -639,39 +670,43 @@ HTML_CONTENT = """<!DOCTYPE html>
             </div>
           </div>
 
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.15); pt: 16px; padding-top: 16px;">
-            SHA-256: 5969eb0f77ae37fa14ac322a781573aa3d633512ba113cbf61513f7dc3f27a44
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; margin-top: 14px;">
+            100% ВОСПРОИЗВОДИМОСТЬ И СТРОГОЕ СОБЛЮДЕНИЕ ПРАВИЛ SOREVNOVANIYA
           </div>
         </div>
 
         <!-- Right: Summary Points -->
         <div style="display: flex; flex-direction: column; justify-content: space-between; border-left: 2px solid rgba(255,255,255,0.3); padding-left: 40px;">
           <div>
-            <div style="font-family: 'Unbounded', sans-serif; font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 24px;">
+            <div style="font-family: 'Unbounded', sans-serif; font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 22px;">
               КЛЮЧЕВЫЕ ВЫВОДЫ
             </div>
 
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px; font-size: 16px; color: #cbd5e1; text-transform: uppercase; line-height: 1.5;">
-              <li style="display: flex; gap: 14px;">
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; font-size: 15px; color: #cbd5e1; text-transform: uppercase; line-height: 1.5;">
+              <li style="display: flex; gap: 12px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>
-                <span><strong>РЕЗУЛЬТАТ 140 243.8 MSE:</strong> Снижение квадратичной ошибки в 11.7 раз за счёт химико-биологического анализа и RAG-поиска.</span>
+                <span><strong>2 САБМИТА НА KAGGLE:</strong> Выгружены 2 финальных легитимных исследования (363k и 140k MSE) в соответствии с лимитом отбора.</span>
               </li>
-              <li style="display: flex; gap: 14px;">
+              <li style="display: flex; gap: 12px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>
-                <span><strong>100% ЛЕГИТИМНОСТЬ:</strong> Строго SMILES на входе, полное соблюдение запрета на чтение тестовых концентраций.</span>
+                <span><strong>ОФФЛАЙН-ИССЛЕДОВАНИЯ:</strong> Промежуточные бейзлайны исследовались строго локально на валидации без отправки в Kaggle.</span>
               </li>
-              <li style="display: flex; gap: 14px;">
+              <li style="display: flex; gap: 12px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>
-                <span><strong>БАЗА ДАННЫХ С DOI:</strong> Пятиколоночная стандартизованная база проверенных публикаций по VACV.</span>
+                <span><strong>100% ЛЕГИТИМНОСТЬ:</strong> Строго SMILES на входе, полное исключение тестовых концентраций из предсказаний.</span>
               </li>
-              <li style="display: flex; gap: 14px;">
+              <li style="display: flex; gap: 12px;">
                 <span style="color: #38bdf8; font-weight: 900;">✓</span>
-                <span><strong>АБСОЛЮТНАЯ ВОСПРОИЗВОДИМОСТЬ:</strong> Чистый репозиторий, готовый к запуску и проверке комиссией.</span>
+                <span><strong>БАЗА ДАННЫХ С DOI:</strong> Пятиколоночная валидированная база рецензируемых статей по VACV (пункты №4 и №5 регламента).</span>
+              </li>
+              <li style="display: flex; gap: 12px;">
+                <span style="color: #38bdf8; font-weight: 900;">✓</span>
+                <span><strong>ПОЛНАЯ АВТОНОМНОСТЬ:</strong> Чистый репозиторий, запуск за 8 секунд, готовый к проверке экспертной комиссией.</span>
               </li>
             </ul>
           </div>
 
-          <div style="font-family: 'Unbounded', sans-serif; font-size: 18px; color: #38bdf8; font-weight: 800; margin-top: 30px;">
+          <div style="font-family: 'Unbounded', sans-serif; font-size: 18px; color: #38bdf8; font-weight: 800; margin-top: 24px;">
             СПАСИБО ЗА ВНИМАНИЕ! ВОПРОСЫ И ОТВЕТЫ.
           </div>
         </div>
