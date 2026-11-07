@@ -1,0 +1,14 @@
+{
+  "output": "data/curated/vacv_new_observations.csv",
+  "rows": 34,
+  "excluded_train_copies": 5,
+  "source_rows_before_purge": 39,
+  "doi_counts": {
+    "10.1016/j.ejmech.2023.115601": 16,
+    "10.1016/j.bmcl.2022.129080": 10,
+    "10.1016/j.ejmech.2021.113485": 5,
+    "10.1039/C8MD00442K": 3
+  },
+  "sha256": "b14dfd1904c2d4ff7da53fed75f2d648807c1c9717a2a08fe589342fb275d2e6",
+  "policy": "These measurements are research candidates, not automatically used in the best model; Kaggle concentration fields are never model inputs."
+}
