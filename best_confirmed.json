@@ -2,7 +2,7 @@
   "status": "confirmed_public_score",
   "submission": "submission_v2_cage_publication.csv",
   "public_mse": 819116.04045,
-  "verified_public_rank": 6,
+  "verified_public_rank": 7,
   "verified_total_entries": 49,
   "target_snapshot": "train_v2.csv",
   "target_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
@@ -72,7 +72,7 @@
   ],
   "extra_publication_rows": 12,
   "publication_structure_overrides": 8,
-  "verification_time_msk": "2026-11-07 18:36",
+  "verification_time_msk": "2026-11-07 18:46",
   "latest_leader": {
     "team": "Anti7",
     "public_mse": 168.82737
