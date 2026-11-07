@@ -1,0 +1,57 @@
+{
+  "prior_gate_passed": false,
+  "followup_reason": "atom-pair had lower means in every earlier suite but only 0.82% improvement in one; prior 1%-per-suite gate failed",
+  "recipe_frozen": {
+    "feature": "atom_pair_sparse",
+    "k": 1,
+    "power": 2,
+    "calibration": "raw"
+  },
+  "seeds_fixed_before_run": [
+    97531,
+    31627
+  ],
+  "followup_gate": "pooled mean MSE at least 1% lower and both new suite means lower; no further recipe tuning in this check",
+  "inputs": [
+    "SMILES"
+  ],
+  "suites": {
+    "97531": {
+      "current": [
+        11809008.03765906,
+        95574.29344499868,
+        32480.459880229264,
+        500015.52306629595,
+        1375278.3776757354
+      ],
+      "candidate": [
+        11699786.420944294,
+        104774.3037286504,
+        85993.309802228,
+        426288.55008151557,
+        135222.03302382896
+      ]
+    },
+    "31627": {
+      "current": [
+        95338.23758142376,
+        76205.80650778054,
+        823814.2923047268,
+        235827.58976988588,
+        13499831.1829889
+      ],
+      "candidate": [
+        59310.8787467707,
+        76282.53788732835,
+        822748.8181518636,
+        132140.65074271327,
+        12220007.916230517
+      ]
+    }
+  },
+  "pooled_mse": {
+    "current": 2854337.3800879037,
+    "candidate": 2576255.541933971
+  },
+  "followup_gate_passed": true
+}

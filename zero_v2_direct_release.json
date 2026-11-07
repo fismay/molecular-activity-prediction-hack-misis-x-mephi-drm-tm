@@ -1,0 +1,33 @@
+{
+  "inputs": [
+    "SMILES"
+  ],
+  "recipe": {
+    "feature": "atom_pair_sparse",
+    "k": 1,
+    "power": 2,
+    "current_weight": 0.0
+  },
+  "training_zeros_retained": 83,
+  "external_novel_rows": 5,
+  "first15_mse": 2598011.2747606444,
+  "confirmation10_mse": {
+    "current": 2912757.072362141,
+    "candidate": 2646467.5699640056
+  },
+  "checks": {
+    "rows": 597,
+    "sample_order": true,
+    "finite_nonnegative": true,
+    "forbidden_columns_mutation_identical": true,
+    "other_columns_removed_identical": true,
+    "saved_model_identical": true
+  },
+  "sha256": {
+    "train_v2.csv": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+    "test.csv": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+    "sample_submit.csv": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c",
+    "bornyl_amides_expanded_source.csv": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18",
+    "submission_v2_direct_atom.csv": "9626133af90df94c4cf79078d59efeba15dfda7e9f1a8dede90d7ab70e8d0c3e"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "source": "https://www.ebi.ac.uk/chembl/api/data",
+  "document": "CHEMBL4837211",
+  "doi": "10.1016/j.ejmech.2021.113485",
+  "assays": {
+    "IC50": "CHEMBL4838274",
+    "CC50": "CHEMBL4838273",
+    "SI": "CHEMBL4838275"
+  },
+  "descriptions": {
+    "IC50": "Inhibition of p37 in Vaccinia virus Copenhagen infected in African green monkey Vero cells assessed as reduction in viral reproduction incubated for 4 days by neutral red dye based colorimetric analysis",
+    "CC50": "Cytotoxicity against African green monkey Vero cells assessed as reduction in cell viability by neutral red dye based colorimetric analysis",
+    "SI": "Selectivity index, ratio of CC50 for African green monkey Vero cells to IC50 for inhibition of p37 in Vaccinia virus Copenhagen infected in African green monkey Vero cells"
+  },
+  "raw_counts": {
+    "IC50": 19,
+    "CC50": 21,
+    "SI": 19
+  },
+  "rejected": {
+    "IC50": {
+      "reasons": {
+        "censored_or_flagged": 1
+      },
+      "ambiguous_molecules": 0
+    },
+    "CC50": {
+      "reasons": {
+        "censored_or_flagged": 14
+      },
+      "ambiguous_molecules": 0
+    },
+    "SI": {
+      "reasons": {
+        "censored_or_flagged": 13
+      },
+      "ambiguous_molecules": 0
+    }
+  },
+  "rows": 6,
+  "validation_status": {
+    "published_si_only": 1,
+    "consistent": 5
+  },
+  "policy": "Published exact SI kept distinct from concentrations; only consistent triples may become matched labels."
+}

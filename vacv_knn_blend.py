@@ -26,8 +26,8 @@ def nearest(smiles_train, y, smiles_test):
     return np.asarray(out)
 
 
-def nearest_ensemble(smiles_train, y, smiles_test):
-    keep = np.flatnonzero(y != 10000)
+def nearest_ensemble(smiles_train, y, smiles_test, exclude_value=10000):
+    keep = np.arange(len(y)) if exclude_value is None else np.flatnonzero(y != exclude_value)
     train_mols = [Chem.MolFromSmiles(smiles_train.iloc[i]) for i in keep]
     test_mols = [Chem.MolFromSmiles(s) for s in smiles_test]
     recipes = [(FP, False, 3, 4),

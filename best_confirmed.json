@@ -1,19 +1,42 @@
 {
   "status": "confirmed_public_score",
-  "submission": "submission_brier_neighbors.csv",
-  "public_mse": 4006684.58056,
-  "original_code_commit": "4037525",
-  "script": "vacv_brier_neighbors.py",
-  "syntax_ensemble": true,
-  "syntax_max_features": 0.7,
-  "conditional_transform": "raw",
-  "calibrate_probability": true,
-  "latest_rejected_candidate": {
-    "submission": "submission_conservative_blend.csv",
-    "public_mse": 4072147.65629
+  "submission": "submission_v2_stereo_hurdle.csv",
+  "public_mse": 820681.16278,
+  "verified_public_rank": 3,
+  "verified_total_entries": 21,
+  "target_snapshot": "train_v2.csv",
+  "target_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+  "csv_sha256": "0889724213860bd58db86e0b5ed0ed984160de4d67d9e943a0f199758ca96bae",
+  "script": "vacv_zero_hurdle.py",
+  "inputs": [
+    "SMILES"
+  ],
+  "strategy": "hurdle",
+  "calibration": "raw",
+  "conditional": "source_stereo_only",
+  "source_sha256": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18",
+  "source_doi": "10.1002/cmdc.202100771",
+  "source_novel_rows": 5,
+  "validation": "zero_v2_validation.json",
+  "confirmation": "zero_v2_confirmation.json",
+  "release_checks": "zero_v2_release.json",
+  "previous_best": {
+    "submission": "submission.csv",
+    "public_mse": 13812033.6317
   },
-  "next_experimental_candidate": null,
-  "probability_calibration": "Brier, nested GroupKFold3, penalty 0.001",
-  "conditional_neighbor_ensemble_weight": 0.5,
-  "verified_public_rank": 10
+  "final_selection": "Kaggle automatic best two;0 manual selections;private score unknown",
+  "rejected_public_candidates": [
+    {
+      "file": "submission_v2_forest.csv",
+      "public_mse": 1645802.93915
+    },
+    {
+      "file": "submission_v2_atom_pair.csv",
+      "public_mse": 901434.30767
+    },
+    {
+      "file": "submission_v2_direct_atom.csv",
+      "public_mse": 897328.12964
+    }
+  ]
 }

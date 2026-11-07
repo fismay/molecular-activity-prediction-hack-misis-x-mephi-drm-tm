@@ -1,0 +1,44 @@
+{
+  "source": "https://www.ebi.ac.uk/chembl/api/data",
+  "document": "CHEMBL5223146",
+  "doi": "10.1016/j.bmcl.2022.129080",
+  "assays": {
+    "IC50": "CHEMBL5225279",
+    "CC50": "CHEMBL5225278",
+    "SI": "CHEMBL5225280"
+  },
+  "descriptions": {
+    "IC50": "Antiviral activity against Vaccinia virus Copenhagen infected in Vero cells measured after 4 days by colorimetric assay",
+    "CC50": "Cytotoxicity against African green monkey Vero cells measured after 4 days by colorimetric assay",
+    "SI": "Selectivity index, ratio of CC50 for African green monkey Vero cells to IC50 for Vaccinia virus Copenhagen infected in Vero cells"
+  },
+  "raw_counts": {
+    "IC50": 20,
+    "CC50": 20,
+    "SI": 12
+  },
+  "rejected": {
+    "IC50": {
+      "reasons": {
+        "censored_or_flagged": 8
+      },
+      "ambiguous_molecules": 0
+    },
+    "CC50": {
+      "reasons": {
+        "censored_or_flagged": 3
+      },
+      "ambiguous_molecules": 0
+    },
+    "SI": {
+      "reasons": {},
+      "ambiguous_molecules": 0
+    }
+  },
+  "rows": 12,
+  "validation_status": {
+    "consistent": 11,
+    "mismatch_review": 1
+  },
+  "policy": "Published exact SI kept distinct from concentrations; only consistent triples may become matched labels."
+}

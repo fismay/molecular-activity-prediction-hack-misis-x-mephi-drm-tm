@@ -1,12 +1,54 @@
 # Molecular Activity Prediction — MISIS x MEPhI DRM TM
 
+Текущий лучший подтверждённый результат fismay — **820 681.16278**, `submission_v2_stereo_hurdle.csv`, публичное место **3** при проверке 7 ноября 2026. В train_v2 организатор заменил 81 старую метку 10000 на 0; теперь нулей83. SHA256 входов и лучшего CSV — `best_confirmed.json`. Только SMILES; запрещённые концентрационные поля не используются.
+
+```bash
+.venv/bin/python vacv_zero_hurdle.py --train data/kaggle/train_v2.csv \
+  --test data/kaggle/test.csv --sample data/kaggle/sample_submit.csv \
+  --source artifacts/external/bornyl_amides_expanded_source.csv \
+  --calibration raw --conditional source_stereo_only \
+  --model artifacts/zero_v2_hurdle_nn.joblib \
+  --output submission_v2_stereo_hurdle.csv --report zero_v2_release.json
+```
+
+На 15 групповых разбиениях MSE2850702 против4267751 у заново обученного леса; на пяти дополнительных2907210 против4520415. Внешний снимок остаётся локальным, точные копии всех train/validation-молекул удалены. Публичные альтернативы forest1645802.93915 и atom-pair901434.30767 хуже лучшего. Отчёты исследования сохраняют и неудачные проверки. Новые разбиения повторно используют те же молекулы.
+
+Для судей отдельно создан чистый локальный репозиторий `misis-x-mephi-drm-tm-molecular`: только README, сценарий чекпоинта, код, разрешённые открытые выгрузки, конфигурация и проверенные отчёты. Его сокращённый код побайтово воспроизводит оба подтверждённых CSV; полные20 folds повторены. История ниже оставлена для исследования и не является текущим состоянием лидерборда.
+
+## Исторические результаты и эксперименты
+
+7 ноября изменились публичные оценки17 прежних отправок; исходный baseline тогда стал лучшим со13812033.63170. Повторная загрузка данных выявила исправленную train_v2. Все regraded баллы сохранены в `kaggle_regraded_scores_20261107_0332.json`.
+
+Исторический результат до изменения оценок: **3 128 256.42100**, `submission_bornyl_isotonic.csv`, fismay, место 12 при проверке 7 ноября. Это на 21.9% ниже прежнего Brier-варианта. В модели используются хиральные соседи с проверкой совместимости заданной стереохимии одного каркаса и проверенные опубликованные измерения из `10.1002/cmdc.202100771`; лес и классификатор сохранены, к Brier-калибровке добавлена изотоническая кривая с заранее выбранным весом 50%.
+
+```bash
+.venv/bin/python vacv_external_neighbors.py --train data/kaggle/train.csv \
+  --test data/kaggle/test.csv --sample data/kaggle/sample_submit.csv \
+  --source artifacts/external/bornyl_amides_expanded_source.csv \
+  --base-model artifacts/brier_neighbors.joblib --model artifacts/bornyl_isotonic.joblib \
+  --neighbor-recipe scaffold-stereo --isotonic-weight .5 \
+  --output submission_bornyl_isotonic.csv --report bornyl_isotonic_release.json
+.venv/bin/python validate_external_neighbors.py \
+  --source artifacts/external/bornyl_amides_expanded_source.csv \
+  --reference-source artifacts/external/bornyl_amides_source.csv \
+  --neighbor-recipe scaffold-stereo --all-history
+```
+
+Для воспроизведения этого запуска нужен локальный вручную сверенный снимок `artifacts/external/bornyl_amides_expanded_source.csv`, SHA256 `2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18`. Он уже сохранён в рабочей среде; автоматического публичного сборщика для этой рукописи нет.
+
+Десять первичных измерений сверены по авторской рукописи; для доступных соединений дополнительно проверены структуры и IC50-записи ChEMBL. Их локальный снимок и исходные данные соревнования не включены в Git; контрольные суммы и происхождение сохранены в отчётах. Совпадения внешних молекул с train удаляются; в CV дополнительно удаляются совпадения с validation. Обозначения некоторых соединений в экспериментальном разделе рукописи расходятся с таблицей и обсуждением; сопоставление проверено по структурам и значениям ChEMBL. Опубликованный SI и отношение опубликованных средних концентраций сохранены раздельно.
+
+Проверка `bornyl_stereo_validation.json`: первые 15 folds 6 129 160 → 5 903 649 по сравнению с предыдущей source-моделью; новые пять folds 6 637 382 → 6 123 709. Полный повтор расчёта из SMILES — bornyl_stereo_recomputed.json. Выигрыш сконцентрирован на больших SI и не даёт гарантии для закрытой части test. `source_improvement_uncertainty.json` показывает широкий диапазон описательного bootstrap по молекулам.
+
+Изотоническая калибровка обучена на внутренних трёх групповых OOF-прогнозах. Вес 50% выбран на первых 15 folds, после чего подтверждён на следующих 10 и на пяти новых разбиениях seed=48372: 6 123 709 → 5 922 485. Все разбиения повторно используют те же 320 строк и не являются новым независимым датасетом. Отчёты: `bornyl_isotonic_validation.json`, `bornyl_isotonic_recomputed.json`, `bornyl_isotonic_release.json`. Публичные результаты всех пяти новых отправок и отклонённые эксперименты записаны в `two_hour_research_report.json`.
+
 Прогноз индекса селективности малых молекул против vaccinia virus (VACV) по SMILES.
 
 Подробная постановка, результаты первоначального аудита и план: [PROJECT_BRIEF.md](PROJECT_BRIEF.md). Правила работы в репозитории: [AGENTS.md](AGENTS.md).
 
 План выхода в топ-3 с учётом текущего лидерборда и правил: [TOP3_STRATEGY.md](TOP3_STRATEGY.md).
 
-**Лучший подтверждённый вариант:** `submission_brier_neighbors.csv`, публичный MSE **4 006 684.58056** (Kaggle, 7 ноября 2026). Он использует Brier-калибровку и ансамбль структурных соседей; команда воспроизведения приведена в конце README. Предыдущий подтверждённый `submission_calibrated.csv` получил 4 052 042.53827. Предыдущий `submission_smiles_syntax.csv` получил 4 319 947.19472. Модель использует только SMILES; калибровка вероятности обучается на внутренних групповых разбиениях. Параметры закреплены в [best_confirmed.json](best_confirmed.json). Сначала создаётся базовый артефакт для нового варианта:
+**Предыдущий baseline:** `submission_brier_neighbors.csv`, публичный MSE **4 006 684.58056** (Kaggle, 7 ноября 2026). Он использует Brier-калибровку и ансамбль структурных соседей; команда воспроизведения приведена в конце README. Предыдущий подтверждённый `submission_calibrated.csv` получил 4 052 042.53827. Предыдущий `submission_smiles_syntax.csv` получил 4 319 947.19472. Модель использует только SMILES; калибровка вероятности обучается на внутренних групповых разбиениях. Параметры закреплены в [best_confirmed.json](best_confirmed.json). Сначала создаётся базовый артефакт для нового варианта:
 
 ```bash
 .venv/bin/python vacv_text_mixture.py \
@@ -143,7 +185,7 @@ MSE по тем же 15 разбиениям — **7 025 214**, против **7
   --output submission_brier_neighbors.csv
 ```
 
-Проверка на новой серии разбиений: `.venv/bin/python validate_brier_fresh.py`. Публичный MSE этого варианта — **4 006 684.58056**, лучший подтверждённый результат.
+Проверка на новой серии разбиений: `.venv/bin/python validate_brier_fresh.py`. Публичный MSE этого предыдущего варианта — **4 006 684.58056**. Актуальный лучший файл указан в начале README.
 
 Экспериментальная совместная калибровка конечного MSE:
 
@@ -180,3 +222,36 @@ python3 -m venv .venv-tabicl
 ```
 
 Её публичный MSE **4 072 147.65629**, поэтому она не заменяет лучший Brier-вариант. Новая групповая проверка: `.venv/bin/python validate_conservative_fresh.py`.
+
+Проверка экспериментального контекста всех точных IC50/EC50–CC50 пар: `.venv/bin/python audit_assay_context.py`. Из 293 перекрёстных пар только 47 имеют совпадающие аннотированные клетки и длительность. Они остаются кандидатами для проверки по публикациям; автоматически в обучение не входят. Остальные пары явно помечены причинами несовместимости или отсутствующими условиями. Выгрузка сохраняет исходные и стандартизованные измерения, DOI, ID и URL обеих записей; лицензия указана в assay_context_candidates.LICENSE.md.
+
+Замороженный ChemBERTa и граф исходных SMILES проверены совместно в `graph_chemberta_validation.json`: 25 старых folds 6 586 204 → 6 501 136; пять новых групповых folds seed48372 7 007 701 → 6 749 133. Это проверки на тех же 320 строках, а не независимые новые данные. Публичный MSE `submission_graph_chemberta.csv` — **4 182 341.42466**, поэтому лучший Brier-вариант сохранён. ChemBERTa предобучен на 100M молекул ZINC20; источник и MIT-лицензия: https://huggingface.co/DeepChem/ChemBERTa-100M-MLM. Тестовые SMILES участвуют в построении графа без меток; это явно трансдуктивная модель.
+
+Воспроизведение требует основной среды и отдельной среды энкодера:
+
+```bash
+.venv/bin/python export_chemberta_smiles.py --train data/kaggle/train.csv \
+  --test data/kaggle/test.csv --output artifacts/chemberta/smiles.json
+python3 -m venv .venv-chemberta
+.venv-chemberta/bin/python -m pip install -r requirements-chemberta.txt
+.venv-chemberta/bin/python extract_chemberta_embeddings.py \
+  --input artifacts/chemberta/smiles.json --output artifacts/chemberta/embeddings.npz \
+  --report chemberta_encoder_report.json
+.venv/bin/python vacv_graph_chemberta.py --train data/kaggle/train.csv \
+  --test data/kaggle/test.csv --sample data/kaggle/sample_submit.csv \
+  --features artifacts/chemberta/embeddings.npz --encoder-report chemberta_encoder_report.json \
+  --base-model artifacts/brier_neighbors.joblib --model artifacts/graph_chemberta.joblib \
+  --output submission_graph_chemberta.csv --report graph_chemberta_release.json
+```
+
+Релиз проверяет точные колонки и порядок 597 строк, конечность прогнозов, побитовую неизменность при подмене запрещённых столбцов и удалении всех прочих признаков, а также прогноз после сохранения/загрузки модели. Веса энкодера закреплены по revision и SHA256.
+
+Прямая проверка выбранного графового/ChemBERTa кандидата с повторным обучением: `.venv/bin/python validate_graph_chemberta.py --all-history`. Без флага выполняется только новая серия seed48372.
+
+Дополнительный источник 2023 года (`10.1016/j.ejmech.2023.115601`) собирается `.venv/bin/python collect_cidofovir_selectivity.py`: 36 согласованных точных опубликованных SI, отдельно 18 Vero и 18 A549. В источнике токсичность измеряется за 72 часа, антивирусная активность — за 96 часов; оба протокола сохранены, их эквивалентность не утверждается. Числа SI опубликованы непосредственно, а не созданы произвольным объединением опытов. Полные исходные единицы, отношения, идентификаторы и URL сохранены.
+
+Лицензированная первичная серия adamantane-amides собирается `.venv/bin/python collect_cage_amide_primary.py`: 14 соединений, 12 точных опубликованных измерений и 2 неактивные/цензурированные строки без обучающих меток. TC50 сохраняется под исходным названием и определением автора; SI = TC50/IC50. Лицензия CC BY 4.0 проверена на странице статьи. На текущем сравнении добавление серии к лучшему варианту не дало убедительного дополнительного выигрыша; новая отправка с ней не выпускалась.
+
+Дополнение источников графом SMILES с фиксированным весом .25 получило публичный MSE **3 692 980.86025** и не заменило лучший source-neighbor вариант. Полный отчёт — bornyl_graph_validation.json. Стресс-проверка `.venv/bin/python validate_external_scaffolds.py --source artifacts/external/bornyl_amides_source.csv` показывает пользу источников для родственных семейств, но не доказала улучшение при исключении целых внешних каркасов: MSE 7 561 227 → 7 566 679. Это ограничение экстраполяции, а не оценка закрытого Kaggle test.
+
+Стереохимическое правило задаётся в stereo_neighbors.py: если ахиральный каркас одинаков, но обе заданные конфигурации несовместимы при изоморфном сопоставлении, такая структура исключается из ближайших соседей. Неуказанная стереохимия не считается доказанным конфликтом. Это эвристика структуры, проверенная на grouped CV; она не означает общего доказательства биологического механизма.
