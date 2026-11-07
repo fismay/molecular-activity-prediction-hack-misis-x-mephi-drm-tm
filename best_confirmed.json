@@ -3,7 +3,7 @@
   "submission": "submission_v2_stereo_hurdle.csv",
   "public_mse": 820681.16278,
   "verified_public_rank": 3,
-  "verified_total_entries": 21,
+  "verified_total_entries": 38,
   "target_snapshot": "train_v2.csv",
   "target_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
   "csv_sha256": "0889724213860bd58db86e0b5ed0ed984160de4d67d9e943a0f199758ca96bae",
@@ -37,6 +37,22 @@
     {
       "file": "submission_v2_direct_atom.csv",
       "public_mse": 897328.12964
+    },
+    {
+      "file": "submission_v2_direct_morgan.csv",
+      "public_mse": 823666.95676
+    },
+    {
+      "file": "submission_v2_morgan_blend.csv",
+      "public_mse": 821860.73041
+    },
+    {
+      "file": "submission_v2_equal_neighbors.csv",
+      "public_mse": 836954.35044
+    },
+    {
+      "file": "submission_v2_new_source_atom_blend.csv",
+      "public_mse": 840430.44236
     }
   ]
 }

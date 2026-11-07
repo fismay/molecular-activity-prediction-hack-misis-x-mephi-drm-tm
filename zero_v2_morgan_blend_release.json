@@ -1,0 +1,26 @@
+{
+  "inputs": [
+    "SMILES"
+  ],
+  "weight": 0.5,
+  "weight_selected_in_prepublic_training_screen": true,
+  "first15_mse": 2677961.0797653804,
+  "confirmation10_mse": {
+    "current": 2912757.072362141,
+    "candidate": 2731523.848027895
+  },
+  "checks": {
+    "rows": 597,
+    "sample_order": true,
+    "finite_nonnegative": true,
+    "forbidden_columns_independent": true,
+    "saved_model_identical": true
+  },
+  "input_sha256": {
+    "zero_v2_hurdle_nn.joblib": "fe1ede27ce1c703dd80b5006a25416849e7c5cc2b16fc87d1f9a4169ff29c7de",
+    "zero_v2_direct_morgan.joblib": "fcf0cd665c437ca1f337c2e1ef7a94e0ebdf5e597e33566f856c595d445e3a73",
+    "test.csv": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+    "sample_submit.csv": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c"
+  },
+  "csv_sha256": "2b942a522674d89b808bb056ca70e9f5b65c2948b02ff1f2503564fe579660c3"
+}

@@ -1,0 +1,56 @@
+{
+  "inputs": [
+    "SMILES"
+  ],
+  "selected_before_confirmation": "morgan_count_r2_k1_p2_current0.0",
+  "recipe": {
+    "feature": "morgan_count_r2",
+    "k": 1,
+    "power": 2,
+    "current_weight": 0.0
+  },
+  "confirmation_seeds": [
+    61453,
+    40511
+  ],
+  "selection": "lowest mean Morgan recipe from existing pre-public screen; same held-out grouped partitions; no public-score weight tuning",
+  "suites": {
+    "61453": {
+      "current": [
+        140266.32923597028,
+        1993017.91508801,
+        11845512.414673317,
+        205190.4800876191,
+        72830.22531334021
+      ],
+      "candidate": [
+        139175.39715931236,
+        787289.0787998058,
+        11895649.74444238,
+        208108.57671906648,
+        65208.20890095467
+      ]
+    },
+    "40511": {
+      "current": [
+        188808.78778907677,
+        430864.74570353905,
+        611254.6816025387,
+        434781.75334095425,
+        13205043.39078705
+      ],
+      "candidate": [
+        195754.4074988756,
+        416535.2555495694,
+        620302.5530254185,
+        517091.5814479852,
+        11946365.75964252
+      ]
+    }
+  },
+  "pooled_mse": {
+    "current": 2912757.072362141,
+    "candidate": 2679148.0563185886
+  },
+  "qualified": true
+}
