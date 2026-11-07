@@ -10,7 +10,6 @@ EXPECTED = '9dbf100872cb99818b765e382815db1a7edd7dcc65125ab2b1a88d0acd5dc263'
 
 def main():
     subprocess.run([sys.executable, 'run_current_best.py'], check=True)
-    subprocess.run([sys.executable, 'vacv_cidofovir_a549_publication.py'], check=True)
     path = Path('submission_v2_cidofovir_a549.csv')
     actual = hashlib.sha256(path.read_bytes()).hexdigest()
     if actual != EXPECTED:

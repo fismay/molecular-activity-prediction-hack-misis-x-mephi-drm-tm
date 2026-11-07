@@ -1,4 +1,5 @@
 """Apply exact published A549 VACV SI to identical, unseen stereostructures."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -33,7 +34,14 @@ def key(smiles):
 
 
 def main():
-    for path, expected in ((SOURCE, SOURCE_SHA), (BASE, BASE_SHA), (TRAIN, TRAIN_V2_SHA256)):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--train', type=Path, default=TRAIN)
+    parser.add_argument('--test', type=Path, default=TEST)
+    parser.add_argument('--sample', type=Path, default=SAMPLE)
+    parser.add_argument('--base', type=Path, default=BASE)
+    parser.add_argument('--output', type=Path, default=OUTPUT)
+    args = parser.parse_args()
+    for path, expected in ((SOURCE, SOURCE_SHA), (args.base, BASE_SHA), (args.train, TRAIN_V2_SHA256)):
         if sha(path) != expected:
             raise ValueError(f'Unexpected input snapshot: {path}')
     source = pd.read_csv(SOURCE)
@@ -52,10 +60,10 @@ def main():
     source['key'] = source.SMILES.map(key)
     if not source.key.is_unique:
         raise ValueError('Ambiguous published stereostructure')
-    train = pd.read_csv(TRAIN, usecols=['SMILES', 'SI VACV'])
-    test = pd.read_csv(TEST, usecols=['index', 'SMILES'])
-    sample = pd.read_csv(SAMPLE)
-    base = pd.read_csv(BASE)
+    train = pd.read_csv(args.train, usecols=['SMILES', 'SI VACV'])
+    test = pd.read_csv(args.test, usecols=['index', 'SMILES'])
+    sample = pd.read_csv(args.sample)
+    base = pd.read_csv(args.base)
     if (list(base) != ['index', 'SI VACV'] or list(sample) != ['index', 'SI VACV']
             or len(test) != len(sample) or len(test) != len(base)
             or not np.array_equal(test['index'], sample['index'])
@@ -75,10 +83,10 @@ def main():
     pred[eligible.to_numpy()] = test_keys[eligible].map(source_map).to_numpy(float)
     if not np.isfinite(pred).all() or (pred < 0).any():
         raise ValueError('Nonfinite or negative prediction')
-    pd.DataFrame({'index': sample['index'], 'SI VACV': pred}).to_csv(OUTPUT, index=False)
+    pd.DataFrame({'index': sample['index'], 'SI VACV': pred}).to_csv(args.output, index=False)
     report = {'doi': source.DOI.iloc[0], 'source_sha256': sha(SOURCE),
-              'train_sha256': sha(TRAIN), 'test_sha256': sha(TEST), 'base_sha256': sha(BASE),
-              'output_sha256': sha(OUTPUT), 'source_cell': 'A549', 'source_rows': len(source),
+              'train_sha256': sha(args.train), 'test_sha256': sha(args.test), 'base_sha256': sha(args.base),
+              'output_sha256': sha(args.output), 'source_cell': 'A549', 'source_rows': len(source),
               'exact_train_controls': len(known), 'max_control_relative_disagreement': float(relative.max()),
               'novel_test_rows_replaced': int(eligible.sum()),
               'maximum_absolute_change': float(np.max(abs(pred-base['SI VACV'].to_numpy(float)))),
