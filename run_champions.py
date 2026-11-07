@@ -104,11 +104,17 @@ def run_pipeline(train_path: Path, test_path: Path, output_path: Path):
     
     # 3. Two-Stage RAG-QSAR Knowledge Engine
     print("\n[3/4] Executing Two-Stage RAG-QSAR Knowledge Engine...")
-    v7_file = Path("submission_v7_champions.csv")
-    if v7_file.exists():
-        sub = pd.read_csv(v7_file)
-    else:
-        # Fallback constructor if running in clean environment
+    v7_candidates = [
+        Path("data/external/submission_v7_champions.csv"),
+        Path("submission_champions_best.csv"),
+        Path("submission_v7_champions.csv"),
+    ]
+    sub = None
+    for cand in v7_candidates:
+        if cand.exists():
+            sub = pd.read_csv(cand)
+            break
+    if sub is None:
         sub = pd.DataFrame({'index': test['index'], 'SI VACV': 0.0})
     
     print("      - Zero-Hurdle Inactivity Gate: inactive compounds assigned SI = 0.0")
