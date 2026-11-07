@@ -21,3 +21,4 @@ catboost_info/
 submission_knn_blend.csv
 
 .venv-tabicl/
+*.raw
