@@ -10,6 +10,7 @@ from rdkit import Chem
 
 CURATED = Path('data/curated/vacv_new_observations.csv')
 BORNyl = Path('artifacts/external/bornyl_amides_expanded_source.csv')
+CAGE = Path('cage_amide_primary.csv')
 COLUMNS = ['SMILES', 'IC50_uM', 'CC50_uM', 'SI', 'DOI']
 
 
@@ -27,19 +28,30 @@ def main():
     args = parser.parse_args()
     curated = pd.read_csv(CURATED)
     bornyl = pd.read_csv(BORNyl)
-    if len(curated) != 34 or len(bornyl) != 10:
+    cage_all = pd.read_csv(CAGE)
+    cage = cage_all.loc[cage_all.status == 'exact_published_measurement'].copy()
+    if len(curated) != 34 or len(bornyl) != 10 or len(cage_all) != 14 or len(cage) != 12:
         raise ValueError('Unexpected source row count; review source revisions')
     if not curated[['SMILES', 'IC50_uM', 'CC50_uM', 'SI', 'DOI', 'ic50_url', 'cc50_url', 'si_url']].notna().all().all():
         raise ValueError('Missing curated value or ChEMBL provenance')
     if not bornyl[['SMILES', 'IC50_uM', 'CC50_uM', 'SI_derived', 'DOI', 'source_url']].notna().all().all():
         raise ValueError('Missing bornyl value or publication provenance')
+    if not cage[['SMILES', 'IC50_uM', 'TC50_uM', 'SI_derived', 'DOI', 'source_url']].notna().all().all():
+        raise ValueError('Missing cage-amide value or publication provenance')
     if not curated[['ic50_url', 'cc50_url', 'si_url']].map(lambda value: str(value).startswith('https://')).all().all():
         raise ValueError('Invalid curated source URL')
     if not bornyl.source_url.map(lambda value: str(value).startswith('https://')).all():
         raise ValueError('Invalid bornyl source URL')
+    if (not cage.source_url.map(lambda value: str(value).startswith('https://')).all()
+            or set(cage.TC50_relation) != {'='} or set(cage.IC50_relation) != {'='}):
+        raise ValueError('Invalid or censored cage-amide source')
     first = curated[COLUMNS].copy()
     second = bornyl[['SMILES', 'IC50_uM', 'CC50_uM', 'SI_derived', 'DOI']].rename(columns={'SI_derived': 'SI'})
-    table = pd.concat([first, second], ignore_index=True)
+    # The paper calls its 50% cytotoxic endpoint TC50; preserve that name in
+    # the provenance file and map it to the requested CC50 column here.
+    third = cage[['SMILES', 'IC50_uM', 'TC50_uM', 'SI_derived', 'DOI']].rename(
+        columns={'TC50_uM': 'CC50_uM', 'SI_derived': 'SI'})
+    table = pd.concat([first, second, third], ignore_index=True)
     table['SMILES'] = table.SMILES.map(canonical)
     for column in ['IC50_uM', 'CC50_uM', 'SI']:
         table[column] = pd.to_numeric(table[column], errors='raise')
@@ -56,12 +68,13 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(args.output, index=False, lineterminator='\n')
     roundtrip = pd.read_csv(args.output)
-    if list(roundtrip) != COLUMNS or len(roundtrip) != 44 or not roundtrip.SMILES.is_unique:
+    if list(roundtrip) != COLUMNS or len(roundtrip) != 56 or not roundtrip.SMILES.is_unique:
         raise ValueError('Roundtrip validation failed')
     report = {
         'output': str(args.output), 'rows': len(table), 'columns': COLUMNS,
-        'source_files': [str(CURATED), str(BORNyl)],
-        'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in [CURATED, BORNyl]},
+        'source_files': [str(CURATED), str(BORNyl), str(CAGE)],
+        'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in [CURATED, BORNyl, CAGE]},
+        'cytotoxicity_mapping': 'Cage-amide publication reports TC50; its 50% cytotoxic concentration is exported in CC50_uM while the original term is retained in cage_amide_primary.csv.',
         'doi_counts': {doi: int(count) for doi, count in table.DOI.value_counts().items()},
         'max_relative_si_ratio_error': float(relative_error.max()),
         'output_sha256': hashlib.sha256(args.output.read_bytes()).hexdigest(),

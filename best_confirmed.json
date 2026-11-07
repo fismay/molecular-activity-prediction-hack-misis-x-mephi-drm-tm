@@ -1,28 +1,35 @@
 {
   "status": "confirmed_public_score",
-  "submission": "submission_v2_stereo_hurdle.csv",
-  "public_mse": 820681.16278,
-  "verified_public_rank": 3,
-  "verified_total_entries": 39,
+  "submission": "submission_v2_cage_publication.csv",
+  "public_mse": 819116.04045,
+  "verified_public_rank": 6,
+  "verified_total_entries": 41,
   "target_snapshot": "train_v2.csv",
   "target_sha256": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
-  "csv_sha256": "0889724213860bd58db86e0b5ed0ed984160de4d67d9e943a0f199758ca96bae",
-  "script": "vacv_zero_hurdle.py",
+  "csv_sha256": "8a0d40cf37f6a4a3a6d99815e6961b7d89f9493c2e031880b506590dab0d2bf4",
+  "script": "run_current_best.py",
   "inputs": [
     "SMILES"
   ],
   "strategy": "hurdle",
   "calibration": "raw",
   "conditional": "source_stereo_only",
-  "source_sha256": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18",
-  "source_doi": "10.1002/cmdc.202100771",
+  "source_sha256": {
+    "bornyl": "2ac50f4859e3d16a201eb97cc3bb4d17c7a973da21e1fa3d0aa183814d000f18",
+    "cage": "661c5ebb607817c451af54325df2d1186c09255594b47d139a20873260f515c7"
+  },
+  "source_doi": [
+    "10.1002/cmdc.202100771",
+    "10.3390/v15010029"
+  ],
   "source_novel_rows": 5,
   "validation": "zero_v2_validation.json",
   "confirmation": "zero_v2_confirmation.json",
-  "release_checks": "zero_v2_release.json",
+  "release_checks": "cage_publication_release.json",
   "previous_best": {
-    "submission": "submission.csv",
-    "public_mse": 13812033.6317
+    "submission": "submission_v2_stereo_hurdle.csv",
+    "public_mse": 820681.16278,
+    "csv_sha256": "0889724213860bd58db86e0b5ed0ed984160de4d67d9e943a0f199758ca96bae"
   },
   "final_selection": "Kaggle automatic best two;0 manual selections;private score unknown",
   "rejected_public_candidates": [
@@ -54,5 +61,8 @@
       "file": "submission_v2_new_source_atom_blend.csv",
       "public_mse": 840430.44236
     }
-  ]
+  ],
+  "extra_publication_rows": 12,
+  "publication_structure_overrides": 8,
+  "verification_time_msk": "2026-11-07 15:03"
 }
