@@ -11,3 +11,5 @@ Run after `run_current_best.py`:
 ```
 
 The candidate is `submission_v2_hydroxyimidazole.csv` (SHA256 `8f429372ea11f1ba9ff9d384fc250e80c1493121c62a66ad81917d78dd0f3d0b`); `hydroxyimidazole_release.json` records input hashes and checks. This is experimental external measurement retrieval, not independent model generalization. Keep the current best pipeline until a Kaggle public score and private selection justify changing it.
+
+Kaggle accepted the submission on 7 November 2026. Its public MSE was **819116.04045**, exactly equal to the cage-publication baseline. The six changed structures therefore did not affect the public score at displayed precision; their effect on the private split is unknown. The confirmed final pipeline remains `run_current_best.py`.
