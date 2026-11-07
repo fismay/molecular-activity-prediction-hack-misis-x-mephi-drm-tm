@@ -1,0 +1,101 @@
+{
+  "input_sha256": {
+    "artifacts/zero_v2_validation.npz": "00231d2a535498a9217bd8eea4b9e66176c464ea68db63887e882612bbf3b896",
+    "submission_v2_cidofovir_a549.csv": "9dbf100872cb99818b765e382815db1a7edd7dcc65125ab2b1a88d0acd5dc263",
+    "data/kaggle/train_v2.csv": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+    "data/kaggle/test.csv": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd"
+  },
+  "rule": "nonisomeric Murcko scaffold, at least N train compounds, all observed SI=0",
+  "validation": {
+    "2": {
+      "candidate_mse": 2858828.918926386,
+      "baseline_mse": 2857928.8252768256,
+      "relative_improvement": -0.0003149461391760422,
+      "overrides": 55,
+      "positive_labels_overridden": 8,
+      "suites": {
+        "42": {
+          "candidate_mse": 524820.5829467352,
+          "baseline_mse": 522070.8085385028
+        },
+        "2026": {
+          "candidate_mse": 2961470.07558203,
+          "baseline_mse": 2961506.480144631
+        },
+        "17": {
+          "candidate_mse": 5082992.3688183585,
+          "baseline_mse": 5082999.748824078
+        }
+      }
+    },
+    "3": {
+      "candidate_mse": 2857926.9301141324,
+      "baseline_mse": 2857928.8252768256,
+      "relative_improvement": 6.631245245136697e-07,
+      "overrides": 28,
+      "positive_labels_overridden": 3,
+      "suites": {
+        "42": {
+          "candidate_mse": 522067.0781007117,
+          "baseline_mse": 522070.8085385028
+        },
+        "2026": {
+          "candidate_mse": 2961507.6299258773,
+          "baseline_mse": 2961506.480144631
+        },
+        "17": {
+          "candidate_mse": 5082996.638328114,
+          "baseline_mse": 5082999.748824078
+        }
+      }
+    },
+    "4": {
+      "candidate_mse": 2857927.752731765,
+      "baseline_mse": 2857928.8252768256,
+      "relative_improvement": 3.7528753371596224e-07,
+      "overrides": 17,
+      "positive_labels_overridden": 2,
+      "suites": {
+        "42": {
+          "candidate_mse": 522068.3683829478,
+          "baseline_mse": 522070.8085385028
+        },
+        "2026": {
+          "candidate_mse": 2961508.828417883,
+          "baseline_mse": 2961506.480144631
+        },
+        "17": {
+          "candidate_mse": 5082996.618850179,
+          "baseline_mse": 5082999.748824078
+        }
+      }
+    },
+    "5": {
+      "candidate_mse": 2857931.1513200784,
+      "baseline_mse": 2857928.8252768256,
+      "relative_improvement": -8.138912461763681e-07,
+      "overrides": 4,
+      "positive_labels_overridden": 2,
+      "suites": {
+        "42": {
+          "candidate_mse": 522070.8085385028,
+          "baseline_mse": 522070.8085385028
+        },
+        "2026": {
+          "candidate_mse": 2961513.4510952435,
+          "baseline_mse": 2961506.480144631
+        },
+        "17": {
+          "candidate_mse": 5082999.748824078,
+          "baseline_mse": 5082999.748824078
+        }
+      }
+    }
+  },
+  "test_smiles_only_audit": {
+    "threshold_3_matches": 20,
+    "max_baseline_prediction_among_matches": 1059.077453012898
+  },
+  "decision": "reject: no threshold reaches 1% full-MSE improvement and some zero-scaffold folds override positive SI",
+  "limitation": "Grouped folds reuse the same molecules; test labels and concentration fields were not read."
+}
